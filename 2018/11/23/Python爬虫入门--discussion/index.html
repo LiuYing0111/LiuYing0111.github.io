@@ -87,7 +87,10 @@
 <meta property="og:description" content="这次爬的是牛客网求职论坛上面的岗位信息，在之前爬官方网页时候写过的方法就不在重复啦~~   解析HTML代码牛客网求职论坛的HTML代码：   我们的处理方式是，前三个不获取，从第四条信息开始：job_div[3:]   每条信息只获取其职位名称（代码中的tittle），然后将每条信息模拟点开，将其中的详细信息获取到；   HTML代码的规律：每条信息都在”div”, {“class”: “dis">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/13740218-48d48dbe3e5fa8da.PNG?imageMogr2/auto-orient/strip%7CimageView2/2/w/700">
-<meta property="og:updated_time" content="2018-11-23T15:24:59.015Z">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/13740218-222e18083d3e1868.PNG?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/13740218-d8f397faadf52e4f.PNG?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/13740218-f0c16ac192ade692.PNG?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2018-11-24T07:19:13.599Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="小可爱">
 <meta name="twitter:description" content="这次爬的是牛客网求职论坛上面的岗位信息，在之前爬官方网页时候写过的方法就不在重复啦~~   解析HTML代码牛客网求职论坛的HTML代码：   我们的处理方式是，前三个不获取，从第四条信息开始：job_div[3:]   每条信息只获取其职位名称（代码中的tittle），然后将每条信息模拟点开，将其中的详细信息获取到；   HTML代码的规律：每条信息都在”div”, {“class”: “dis">
@@ -352,7 +355,20 @@
 <p>str:分隔符，默认所有的空字符，包括空格、换行（\n）、制表符（\t）等<br>num：分割次数  </p>
 <p>split是对字符串进行处理，返回值是列表list类型的；  </p>
 <p>本程序中，<code>link3=link2.split(&#39;\n&#39;)</code>：因为link2是字符串类型，要把它变成list类型，才能在后面对它使用for循环，因此采用split方法，在所有\n的地方分隔开。  </p>
-<h3 id="join-split"><a href="#join-split" class="headerlink" title="join(split)"></a>join(split)</h3>
+<p>link2为：<br><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">http<span class="variable">s:</span>//www.nowcoder.<span class="keyword">com</span>/discuss/<span class="number">140290</span>?<span class="built_in">type</span>=<span class="number">7</span>&amp;order=<span class="number">3</span>&amp;pos=<span class="number">4</span>&amp;page=<span class="number">2</span></span><br><span class="line">http<span class="variable">s:</span>//www.nowcoder.<span class="keyword">com</span>/discuss/<span class="number">144831</span>?<span class="built_in">type</span>=<span class="number">7</span>&amp;order=<span class="number">3</span>&amp;pos=<span class="number">5</span>&amp;page=<span class="number">1</span></span><br><span class="line">http<span class="variable">s:</span>//www.nowcoder.<span class="keyword">com</span>/discuss/<span class="number">144830</span>?<span class="built_in">type</span>=<span class="number">7</span>&amp;order=<span class="number">3</span>&amp;pos=<span class="number">6</span>&amp;page=<span class="number">1</span></span><br><span class="line">http<span class="variable">s:</span>//www.nowcoder.<span class="keyword">com</span>/discuss/<span class="number">144817</span>?<span class="built_in">type</span>=<span class="number">7</span>&amp;order=<span class="number">3</span>&amp;pos=<span class="number">7</span>&amp;page=<span class="number">0</span></span><br><span class="line">http<span class="variable">s:</span>//www.nowcoder.<span class="keyword">com</span>/discuss/<span class="number">144788</span>?<span class="built_in">type</span>=<span class="number">7</span>&amp;order=<span class="number">3</span>&amp;pos=<span class="number">8</span>&amp;page=<span class="number">1</span></span><br></pre></td></tr></table></figure></p>
+<p>经过split方法后，得到的link3为：<br><figure class="highlight scheme"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[<span class="symbol">'https://www.nowcoder.com/discuss/140290?type=7&amp;order=3&amp;pos=4&amp;page=2</span>']</span><br><span class="line">[<span class="symbol">'https://www.nowcoder.com/discuss/144831?type=7&amp;order=3&amp;pos=5&amp;page=1</span>']</span><br><span class="line">[<span class="symbol">'https://www.nowcoder.com/discuss/144830?type=7&amp;order=3&amp;pos=6&amp;page=1</span>']</span><br><span class="line">[<span class="symbol">'https://www.nowcoder.com/discuss/144817?type=7&amp;order=3&amp;pos=7&amp;page=0</span>']</span><br><span class="line">[<span class="symbol">'https://www.nowcoder.com/discuss/144788?type=7&amp;order=3&amp;pos=8&amp;page=1</span>']</span><br></pre></td></tr></table></figure></p>
+<h3 id="join-方法"><a href="#join-方法" class="headerlink" title="join()方法"></a>join()方法</h3><p>因为打印出来的详细信息格式非常乱，每一句中间隔了好多的空格，如下所示：  </p>
+<p><img src="https://upload-images.jianshu.io/upload_images/13740218-222e18083d3e1868.PNG?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">  </p>
+<p>为了解决这种现象，用到了下面这个函数，<code>xx_3=&#39; &#39;.join(xx_3.split())</code>  </p>
+<p>其中，先介绍一下python join()方法，用于将序列中的元素以指定的字符连接成一个新的字符串。<br>语法：<br><code>str.join(sequence)</code><br>sequence–要连接的元素序列<br>返回通过指定字符连接序列中元素后，生成的新的字符串。  </p>
+<p><strong>注：</strong>str.join(元组、列表、字典、字符串)之后生成的只能是字符串。所以有时候可以用join方法将元组、列表这些变成字符串。  </p>
+<p>接着上面的问题，先对xx_3经进行split方法，即<br><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">xx_3</span>=xx_3.split()</span><br><span class="line"><span class="builtin-name">print</span>(xx_3)</span><br></pre></td></tr></table></figure></p>
+<p>处理后的结果为，可以看出把所有的空格处切为一个个的字符串  </p>
+<p><img src="https://upload-images.jianshu.io/upload_images/13740218-d8f397faadf52e4f.PNG?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">  </p>
+<p>然后再用join方法可以把上面的每个字符串之间用一个空格连接起来，就把之前句子与句子之间的多个空格变成了一个空格，问题解决。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/13740218-f0c16ac192ade692.PNG?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">  </p>
+<h3 id="append（）方法"><a href="#append（）方法" class="headerlink" title="append（）方法"></a>append（）方法</h3><p>append方法用于在列表末尾添加新的对象。<br>后面的做法就是把岗位信息和详细信息用append方法加在data（之前定义的空列表上），然后一条一条打印出来。</p>
+<h3 id="常用的数据结构总结"><a href="#常用的数据结构总结" class="headerlink" title="常用的数据结构总结"></a>常用的数据结构总结</h3>
       
     </div>
     
@@ -520,7 +536,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#解析HTML代码"><span class="nav-number">1.</span> <span class="nav-text">解析HTML代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#标序号"><span class="nav-number">2.</span> <span class="nav-text">标序号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#split-方法"><span class="nav-number">3.</span> <span class="nav-text">split()方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#join-split"><span class="nav-number">4.</span> <span class="nav-text">join(split)</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#解析HTML代码"><span class="nav-number">1.</span> <span class="nav-text">解析HTML代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#标序号"><span class="nav-number">2.</span> <span class="nav-text">标序号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#split-方法"><span class="nav-number">3.</span> <span class="nav-text">split()方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#join-方法"><span class="nav-number">4.</span> <span class="nav-text">join()方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#append（）方法"><span class="nav-number">5.</span> <span class="nav-text">append（）方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常用的数据结构总结"><span class="nav-number">6.</span> <span class="nav-text">常用的数据结构总结</span></a></li></ol></div>
             
 
           </div>
