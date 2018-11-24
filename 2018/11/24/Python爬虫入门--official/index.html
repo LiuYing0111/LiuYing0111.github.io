@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="python," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="爬虫入门之牛客网官方实习网页练习~~~~">
+<meta name="keywords" content="python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python爬虫入门--official">
+<meta property="og:url" content="https://liuying0111.github.io/2018/11/24/Python爬虫入门--official/index.html">
+<meta property="og:site_name" content="小可爱">
+<meta property="og:description" content="爬虫入门之牛客网官方实习网页练习~~~~">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-11-24T08:05:10.597Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Python爬虫入门--official">
+<meta name="twitter:description" content="爬虫入门之牛客网官方实习网页练习~~~~">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://liuying0111.github.io/2018/11/24/Python爬虫入门--official/"/>
+
+
+
+
+
+  <title>Python爬虫入门--official | 小可爱</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">小可爱</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">生活要有仪式感</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://liuying0111.github.io/2018/11/24/Python爬虫入门--official/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="刘莹">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小可爱">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Python爬虫入门--official</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-24T16:05:36+08:00">
+                2018-11-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/编程/" itemprop="url" rel="index">
+                    <span itemprop="name">编程</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>爬虫入门之牛客网官方实习网页练习~~~~<br><a id="more"></a></p>
+<h2 id="urllib库"><a href="#urllib库" class="headerlink" title="urllib库"></a>urllib库</h2><p>urllib提供的功能就是利用程序去执行各种HTTP请求。如果要模拟浏览器完成特定功能，需要把请求伪装成浏览器。伪装的方法是先监控浏览器发出的请求，再根据浏览器的请求头来伪装，User-Agent头就是用来标识浏览器的。  </p>
+<p>urllib是Python标准库的一部分,包含urllib.request,urllib.error,urllib.parse,urllib.robotparser四个子模块,这里主要介绍urllib.request的一些简单用法。  </p>
+<h3 id="urllib-request"><a href="#urllib-request" class="headerlink" title="urllib.request"></a>urllib.request</h3><h4 id="urllib-request-urlopen"><a href="#urllib-request-urlopen" class="headerlink" title="urllib.request.urlopen"></a>urllib.request.urlopen</h4><p>urlopen()方法可以实现最基本请求的发起<br>urlopen(url,data,timeout)<br>url即为URL；<br>data是访问URL时要传送的数据；<br>timeout时设置超时时间；<br>第二、三参数是可以不传送的，data默认为空None，timeout默认为sock._GLOBAL_DEFAULT_TIMEOUT；<br>执行Urlopen方法之后，返回一个response对象，返回信息便保存在这里。<br>response对象有一个read（）方法，可以返回获取到的网页内容。  </p>
+<h4 id="urllib-request-Resquest"><a href="#urllib-request-Resquest" class="headerlink" title="urllib.request.Resquest"></a>urllib.request.Resquest</h4><p>用Request类构建了一个完整的请求，增加了headers等一些信息.</p>
+<p>首先，导入request模块<br><figure class="highlight elm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> urllib.request</span><br><span class="line"><span class="title">from</span> urllib.request <span class="keyword">import</span> urlopen</span><br></pre></td></tr></table></figure></p>
+<p>具体程序如下：<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">headers = &#123;<span class="string">'User-Agent'</span> : <span class="string">'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:29.0)Gecko/20100101 Firefox/29.0'</span>&#125;</span><br><span class="line">req = urllib<span class="selector-class">.request</span><span class="selector-class">.Request</span>(url=url,headers=headers)</span><br><span class="line">try:</span><br><span class="line">    res = urllib<span class="selector-class">.request</span><span class="selector-class">.urlopen</span>(req)</span><br><span class="line">except urllib<span class="selector-class">.error</span><span class="selector-class">.URLError</span> as e:</span><br><span class="line">    return e</span><br><span class="line">page_content = res.read()</span><br></pre></td></tr></table></figure></p>
+<h2 id="BeautifulSoup库"><a href="#BeautifulSoup库" class="headerlink" title="BeautifulSoup库"></a>BeautifulSoup库</h2><p>BeautifulSoup是用来从HTML或XML中提取数据的Python库。<br>导入：<br><figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">from</span> <span class="keyword">bs4 </span><span class="meta">import</span> <span class="keyword">BeautifulSoup</span></span><br></pre></td></tr></table></figure></p>
+<p>BeautifulSoup的第一个入参是文档，第二个入参是文档解析器，默认情况下的优先顺序是：lxml，html5lib，python标准库。其中只有lxml支持xml文档的解析。<br><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">page_content=BeautifulSoup(page_content,<span class="string">"lxml"</span>)</span><br><span class="line"><span class="keyword">return</span> page_content</span><br></pre></td></tr></table></figure></p>
+<p>其中，read() 方法用于从文件读取指定的字节数，如果未给定或为负则读取所有。<br>经过BeautifulSoup处理后，打印出来的就是网页的前端代码，它将一些其他的信息滤除掉了。  </p>
+<h3 id="BeautifulSoup中find和find-all的用法"><a href="#BeautifulSoup中find和find-all的用法" class="headerlink" title="BeautifulSoup中find和find_all的用法"></a>BeautifulSoup中find和find_all的用法</h3><p>BeautifulSoup中内置了一些查找方法，最常用的是find（）和find_all函数；<br>find_all得到所有符合条件的结果(形式：列表list)，find只返回第一个符合条件的结果，所以find（）后面可以直接接.text或者get_text()来获取标签中的文本。  </p>
+<p><strong>注：find_all和findAll这两个方法是完全相同的，在新代码中，应该使用小写版本find_all，但是老的名字仍然可用。</strong>  </p>
+<h2 id="SSL证书"><a href="#SSL证书" class="headerlink" title="SSL证书"></a>SSL证书</h2><p>现在随处可见https开头的网站，urllib2可以为HTTPS请求验证SSL证书，就像web浏览器一样，如果网站的SSL证书是经过CA认证的，则能够正常访问，如：<a href="https://www.baidu.com/等.." target="_blank" rel="noopener">https://www.baidu.com/等..</a>. </p>
+<p>如果没有CA认证的网站用urllib2访问的时候，会报出SSL(error)  </p>
+<p>所以，如果以后遇到这种网站，我们需要单独处理SSL证书，让程序忽略SSL证书验证错误，即可正常访问。<br>这时需要用到Python中的ssl模块。</p>
+<figure class="highlight ceylon"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> ssl</span><br><span class="line">ssl.<span class="number">_</span>create<span class="number">_</span><span class="keyword">default</span><span class="number">_</span>https<span class="number">_</span>context=ssl.<span class="number">_</span>create<span class="number">_u</span>nverified<span class="number">_</span>context</span><br></pre></td></tr></table></figure>
+<p>1.表示导入python ssl处理模块<br>2.表示忽略未经核实的SSL证书认证</p>
+<h2 id="HTML程序解析"><a href="#HTML程序解析" class="headerlink" title="HTML程序解析"></a>HTML程序解析</h2><p>通过BeautifulSoup处理后，我们得到了网页的HTML程序，下面要做的就是对HTML程序进行解析，提取出我们所需要的信息。  </p>
+<p>具体的解析方法，观察HTML代码寻找规律，对于<a href="https://www.nowcoder.com/job/center?type=1&amp;page=1" target="_blank" rel="noopener">牛客网实习官方信息</a>而言，它的前端代码为：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">&lt;li <span class="class"><span class="keyword">class</span></span>=<span class="string">"clearfix"</span>&gt;</span><br><span class="line">&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"reco-job-main"</span>&gt;</span><br><span class="line">&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"reco-job-pic"</span>&gt;</span><br><span class="line">&lt;img src=<span class="string">"https://uploadfiles.nowcoder.com/images/20180522/303498_1526990692890_0D6BF0A200B09382C4C32821CB2EDA28"</span>&gt;</span><br><span class="line">&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">&lt;div class="reco-job-cont"&gt;</span></span><br><span class="line"><span class="regexp">&lt;a href="/</span>job/<span class="number">639</span>?jobIds=<span class="number">2601</span><span class="string">" class="</span>reco-job-title<span class="string">" target="</span>_blank<span class="string">"&gt;软件开发工程师&lt;/a&gt;</span></span><br><span class="line"><span class="string">&lt;div class="</span>reco-job-com<span class="string">"&gt;</span></span><br><span class="line"><span class="string">上海孝庸资产管理有限公司</span></span><br><span class="line"><span class="string">&lt;/div&gt;</span></span><br><span class="line"><span class="string">&lt;/div&gt;</span></span><br><span class="line"><span class="string">&lt;div class="</span>reco-job-info<span class="string">"&gt;</span></span><br><span class="line"><span class="string">&lt;div class="</span><span class="string">"&gt;</span></span><br><span class="line"><span class="string">&lt;span class="</span>nk-txt-ellipsis js-nc-title-tips job-address<span class="string">" data-title="</span>上海<span class="string">"&gt;&lt;i class="</span>icon-map-marker<span class="string">"&gt;&lt;/i&gt;上海&lt;/span&gt;</span></span><br><span class="line"><span class="string">&lt;span&gt;&lt;span class="</span>ico-nb<span class="string">"&gt;&amp;yen;&lt;/span&gt;面议/天&lt;/span&gt;</span></span><br><span class="line"><span class="string">&lt;span class="</span>job-status-tag job-status-tag1<span class="string">"&gt;处理快&lt;/span&gt;</span></span><br><span class="line"><span class="string">&lt;/div&gt;</span></span><br><span class="line"><span class="string">&lt;div class="</span>reco-job-detail<span class="string">"&gt;</span></span><br><span class="line"><span class="string">&lt;span class="</span>publisher-name js-nc-title-tips<span class="string">" title="</span>上海孝庸资产管理有限公司<span class="string">"&gt;上海孝庸资产管理有限公司&lt;/span&gt;</span></span><br><span class="line"><span class="string">&lt;span&gt;34分钟前&lt;/span&gt;</span></span><br><span class="line"><span class="string">&lt;div class="</span>reco-job-status<span class="string">"&gt;</span></span><br><span class="line"><span class="string">&lt;span&gt;简历处理率：100%&lt;/span&gt;</span></span><br><span class="line"><span class="string">&lt;span&gt;平均处理：1天&lt;/span&gt;</span></span><br><span class="line"><span class="string">&lt;/div&gt;</span></span><br><span class="line"><span class="string">&lt;/div&gt;</span></span><br><span class="line"><span class="string">&lt;/div&gt;</span></span><br><span class="line"><span class="string">&lt;/div&gt;</span></span><br><span class="line"><span class="string">&lt;/li&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>首先，寻找出<code>&lt;li&gt; &lt;\li&gt;</code>标签，我们所需的信息都包含在这两个标签里面；<br>进一步分析，岗位信息和岗位链接信息都包含在class=”reco-job-title”的<code>&lt;a&gt;</code>标签里面，通过.get_text （一种提取文本信息的方法） 获取岗位信息；<br>通过.get(“href”) ( 返回指定键的值，如果不存在返回默认值 ) 获取岗位链接；  </p>
+<p>地点的获取：可以看出地点信息包含在：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;span <span class="class"><span class="keyword">class</span></span>=<span class="string">"nk-txt-ellipsis js-nc-title-tips job-address"</span> data-title=<span class="string">"上海"</span>&gt;<span class="xml"><span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">"icon-map-marker"</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span></span>上海&lt;<span class="regexp">/span&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>因此，找到这个class对应的span，然后用get_text方法获取地点；<br>同样的方法，获取公司信息。  </p>
+<p>相应的python代码如下：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getJobInfo</span><span class="params">(page_content)</span>:</span></span><br><span class="line">    zhiwei=[]</span><br><span class="line">    company=[]</span><br><span class="line">    link=[]</span><br><span class="line">    data=[]</span><br><span class="line">    shixi_of = <span class="string">'🔴'</span>+ <span class="string">'来自牛客网最新官方实习信息'</span> + <span class="string">"\n"</span> + <span class="string">'[机器喵自动获取，仅供参考]'</span> + <span class="string">"\n"</span> + <span class="string">"---------------------------------"</span> + <span class="string">"\n"</span></span><br><span class="line">    data.append(shixi_of)</span><br><span class="line">    <span class="keyword">global</span> i,j,k,m</span><br><span class="line"></span><br><span class="line">    job_li=page_content.findAll(<span class="string">"li"</span>,&#123;<span class="string">"class"</span>:<span class="string">"clearfix"</span>&#125;)</span><br><span class="line">    <span class="comment"># print(job_li)</span></span><br><span class="line">    <span class="keyword">for</span> job_div <span class="keyword">in</span> job_li:</span><br><span class="line">        job_zhiwei = job_div.findAll(<span class="string">"a"</span>, &#123;<span class="string">"class"</span>: <span class="string">"reco-job-title"</span>&#125;)</span><br><span class="line">        <span class="keyword">for</span> jobzw <span class="keyword">in</span> job_zhiwei:</span><br><span class="line">            <span class="comment"># zhiwei.append(jobzw.get_text())</span></span><br><span class="line">            <span class="keyword">global</span> i</span><br><span class="line">            i=<span class="string">'岗位：'</span>+jobzw.get_text()+<span class="string">'\n'</span></span><br><span class="line">            link_1=<span class="string">'https://www.nowcoder.com'</span>+jobzw.get(<span class="string">"href"</span>)</span><br><span class="line">            <span class="keyword">global</span> k</span><br><span class="line">            k=<span class="string">'详细信息：'</span>+link_1+<span class="string">'\n'</span>+<span class="string">'---------------------------------'</span></span><br><span class="line">            <span class="comment"># link.append(link_1)</span></span><br><span class="line">        job_location=job_div.findAll(<span class="string">"span"</span>,&#123;<span class="string">"class"</span>:<span class="string">"nk-txt-ellipsis js-nc-title-tips job-address"</span>&#125;)</span><br><span class="line">        <span class="keyword">for</span> joblocation <span class="keyword">in</span> job_location:</span><br><span class="line">            <span class="keyword">global</span> m</span><br><span class="line">            m=<span class="string">'地点：'</span>+joblocation.get_text()+<span class="string">'\n'</span></span><br><span class="line">        job_company=job_div.findAll(<span class="string">"div"</span>,&#123;<span class="string">"class"</span>:<span class="string">"reco-job-com"</span>&#125;)</span><br><span class="line">        <span class="keyword">for</span> jobcom <span class="keyword">in</span> job_company:</span><br><span class="line">            <span class="comment"># company.append(jobcom.get_text())</span></span><br><span class="line">            <span class="keyword">global</span> j</span><br><span class="line">            j=<span class="string">'公司：'</span>+jobcom.get_text().replace(<span class="string">'\n'</span>,<span class="string">''</span>)+<span class="string">'\n'</span></span><br><span class="line">            data.append(i+j+m+k)</span><br><span class="line"></span><br><span class="line">    arr=<span class="string">""</span>.join(data)</span><br><span class="line">    <span class="comment"># for h in data:</span></span><br><span class="line">    print(arr)</span><br><span class="line">    <span class="comment">#     print(h)</span></span><br><span class="line">    <span class="keyword">return</span> data</span><br></pre></td></tr></table></figure></p>
+<h3 id="主函数"><a href="#主函数" class="headerlink" title="主函数"></a>主函数</h3><figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="keyword">range</span>(<span class="number">1</span>, <span class="number">6</span>):</span><br><span class="line">    url=<span class="symbol">'https</span>://www.nowcoder.com/job/center?<span class="keyword">type</span>=<span class="number">1</span>&amp;page=<span class="number">1</span>'</span><br><span class="line">    getJobInfo(getPageContent(url))</span><br></pre></td></tr></table></figure>
+<h3 id="print问题"><a href="#print问题" class="headerlink" title="print问题"></a>print问题</h3><p>对于输出的信息，分别存在i,j,k,m中，以字符串的形式；<br>定义了一个data=[]数组，用来存储每次得到的信息<br><figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">      <span class="class"><span class="keyword">data</span>.append(<span class="title">i</span>+<span class="title">j</span>+<span class="title">m</span>+<span class="title">k</span>)</span></span><br><span class="line"><span class="title">for</span> h <span class="keyword">in</span> <span class="class"><span class="keyword">data</span>:</span></span><br><span class="line">    print(h)</span><br></pre></td></tr></table></figure></p>
+<p>最后的输出，是一条一条的，把每条信息都分开了(print出来并不明显，但是微信发送的时候消息就会很多)  </p>
+<figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">🔴来自牛客网最新官方实习信息</span><br><span class="line"><span class="meta">[机器喵自动获取，仅供参考]</span></span><br><span class="line">---------------------------------</span><br><span class="line">岗位：游戏开发工程师（可实习可转正）</span><br><span class="line">公司：4399游戏</span><br><span class="line">地点：北京</span><br><span class="line">详细信息：https://www.nowcoder.com/job/711?jobIds=2642</span><br><span class="line">---------------------------------</span><br></pre></td></tr></table></figure>
+<p>如果想把所有的消息合为一条，经过查资料，找到了.join（）方法，该方法用于将序列中的元素以指定的字符连接生成一个新的字符串。  </p>
+<p>str.join(元组、列表、字典、字符串)之后生成的只能是字符串；<br>所以，很多时候，可以用join()来转化为字符串；<br><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">arr</span>=<span class="string">""</span>.join(data)</span><br><span class="line"><span class="builtin-name">print</span>(arr)</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">🔴来自牛客网最新官方实习信息</span><br><span class="line"><span class="meta">[机器喵自动获取，仅供参考]</span></span><br><span class="line">---------------------------------</span><br><span class="line">岗位：游戏开发工程师（可实习可转正）</span><br><span class="line">公司：4399游戏</span><br><span class="line">地点：北京</span><br><span class="line">详细信息：https://www.nowcoder.com/job/711?jobIds=2642</span><br><span class="line">---------------------------------</span><br><span class="line">岗位：软件开发工程师</span><br><span class="line">公司：上海孝庸资产管理有限公司</span><br><span class="line">地点：上海</span><br><span class="line">详细信息：https://www.nowcoder.com/job/639?jobIds=2601</span><br><span class="line">---------------------------------</span><br><span class="line">岗位：百度核心搜索部机器学习算法实习生</span><br><span class="line">公司：百度</span><br><span class="line">地点：北京</span><br><span class="line">详细信息：https://www.nowcoder.com/job/875?jobIds=2704</span><br><span class="line">---------------------------------</span><br><span class="line">岗位：办公软件C++研发实习生</span><br><span class="line">公司：中标软件有限公司</span><br><span class="line">地点：北京</span><br><span class="line">详细信息：https://www.nowcoder.com/job/464?jobIds=2371</span><br><span class="line">---------------------------------</span><br><span class="line">岗位：大数据研发实习生</span><br><span class="line">公司：北京小米科技有限责任公司</span><br><span class="line">地点：北京</span><br><span class="line">详细信息：https://www.nowcoder.com/job/867?jobIds=2703</span><br><span class="line">---------------------------------</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/python/" rel="tag"># python</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/09/20/前端基础编程/" rel="next" title="前端基础编程">
+                <i class="fa fa-chevron-left"></i> 前端基础编程
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">刘莹</p>
+              <p class="site-description motion-element" itemprop="description">生活要有仪式感</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#urllib库"><span class="nav-number">1.</span> <span class="nav-text">urllib库</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#urllib-request"><span class="nav-number">1.1.</span> <span class="nav-text">urllib.request</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#urllib-request-urlopen"><span class="nav-number">1.1.1.</span> <span class="nav-text">urllib.request.urlopen</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#urllib-request-Resquest"><span class="nav-number">1.1.2.</span> <span class="nav-text">urllib.request.Resquest</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#BeautifulSoup库"><span class="nav-number">2.</span> <span class="nav-text">BeautifulSoup库</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#BeautifulSoup中find和find-all的用法"><span class="nav-number">2.1.</span> <span class="nav-text">BeautifulSoup中find和find_all的用法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SSL证书"><span class="nav-number">3.</span> <span class="nav-text">SSL证书</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML程序解析"><span class="nav-number">4.</span> <span class="nav-text">HTML程序解析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#主函数"><span class="nav-number">4.1.</span> <span class="nav-text">主函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#print问题"><span class="nav-number">4.2.</span> <span class="nav-text">print问题</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">刘莹</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
