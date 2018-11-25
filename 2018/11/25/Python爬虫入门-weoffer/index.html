@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="title: Python爬虫入门–weofferdate: 2018-11-25 18:05:37tags: [python] categories: 编程爬完了实习信息，接下来做的是将我的程序和洒哥哥之前总的程序合并在一起，下面将学习一些新的方法，主要记录一下itchat，一个开源的微信个人号接口的用法。分享一个写的非常全非常细致的文章供参考，python实现微信接口（itchat）本篇博客">
+<meta property="og:type" content="article">
+<meta property="og:title" content="小可爱">
+<meta property="og:url" content="https://liuying0111.github.io/2018/11/25/Python爬虫入门-weoffer/index.html">
+<meta property="og:site_name" content="小可爱">
+<meta property="og:description" content="title: Python爬虫入门–weofferdate: 2018-11-25 18:05:37tags: [python] categories: 编程爬完了实习信息，接下来做的是将我的程序和洒哥哥之前总的程序合并在一起，下面将学习一些新的方法，主要记录一下itchat，一个开源的微信个人号接口的用法。分享一个写的非常全非常细致的文章供参考，python实现微信接口（itchat）本篇博客">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-11-25T13:03:50.297Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="小可爱">
+<meta name="twitter:description" content="title: Python爬虫入门–weofferdate: 2018-11-25 18:05:37tags: [python] categories: 编程爬完了实习信息，接下来做的是将我的程序和洒哥哥之前总的程序合并在一起，下面将学习一些新的方法，主要记录一下itchat，一个开源的微信个人号接口的用法。分享一个写的非常全非常细致的文章供参考，python实现微信接口（itchat）本篇博客">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://liuying0111.github.io/2018/11/25/Python爬虫入门-weoffer/"/>
+
+
+
+
+
+  <title> | 小可爱</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">小可爱</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">生活要有仪式感</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://liuying0111.github.io/2018/11/25/Python爬虫入门-weoffer/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="刘莹">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小可爱">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline"></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-25T18:05:37+08:00">
+                2018-11-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <hr>
+<p>title: Python爬虫入门–weoffer<br>date: 2018-11-25 18:05:37<br>tags: [python]</p>
+<h2 id="categories-编程"><a href="#categories-编程" class="headerlink" title="categories: 编程"></a>categories: 编程</h2><p>爬完了实习信息，接下来做的是将我的程序和洒哥哥之前总的程序合并在一起，下面将学习一些新的方法，主要记录一下itchat，一个开源的微信个人号接口的用法。<br>分享一个写的非常全非常细致的文章供参考，<a href="https://segmentfault.com/a/1190000009420701" target="_blank" rel="noopener">python实现微信接口（itchat）</a><br>本篇博客暂且先学习一下爬虫中用到的功能~~~~  </p>
+<a id="more"></a>  
+<h2 id="itchat库"><a href="#itchat库" class="headerlink" title="itchat库"></a>itchat库</h2><p><a href="https://itchat.readthedocs.io/zh/latest/" target="_blank" rel="noopener">itchat</a>是一个开源的微信个人号接口，可以使用该库进行微信网页版中的所有操作，比如：所有好友、添加好友、拉好友群聊、微信机器人等等。  </p>
+<h3 id="导入itchat库"><a href="#导入itchat库" class="headerlink" title="导入itchat库"></a>导入itchat库</h3><figure class="highlight elm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> itchat</span><br></pre></td></tr></table></figure>
+<h3 id="登陆"><a href="#登陆" class="headerlink" title="登陆"></a>登陆</h3><blockquote>
+<p><code>itchat.auto_login()</code>这种方法将会通过微信扫描二维码登录，但是这种登录的方式确实短时间的登录，并不会保留登录的状态，也就是下次登录时还是需要扫描二维码，如果加上hotReload==True,那么就会保留登录的状态，至少在后面的几次登录过程中不会再次扫描二维码，该参数生成一个静态文件itchat.pkl用于存储登录状态。  </p>
+</blockquote>
+<p>因此，在程序的主函数，第一行就是：登陆微信网页版，并保留登陆状态<br><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">itchat.auto_login(<span class="attribute">hotReload</span>=<span class="literal">True</span>)</span><br></pre></td></tr></table></figure></p>
+<h3 id="好友"><a href="#好友" class="headerlink" title="好友"></a>好友</h3><h4 id="get-friends"><a href="#get-friends" class="headerlink" title="get_friends"></a>get_friends</h4><blockquote>
+<ul>
+<li><code>itchat.get_friends()</code> 返回完整的好友列表</li>
+<li>每个好友为一个字典, 其中第一项为本人的账号信息;</li>
+<li>传入 update=True, 将更新好友列表并返回, get_friends(update=True)  </li>
+</ul>
+</blockquote>
+<h4 id="search-friends"><a href="#search-friends" class="headerlink" title="search_friends"></a>search_friends</h4><p><code>itchat.search_friends()</code> 好友搜索，有以下四种方式:  </p>
+<blockquote>
+<ul>
+<li>仅获取自己的用户信息:  itchat.search_friends()  </li>
+<li>获取特定UserName的用户信息: itchat.search_friends(userName=‘@abcdefg1234567’)</li>
+<li>获取任何一项等于name键值的用户:itchat.search_friends(name=’autolife’)  </li>
+<li>获取分别对应相应键值的用户:itchat.search_friends(wechatAccount=’littlecodersh’)  </li>
+</ul>
+</blockquote>
+<h3 id="群聊"><a href="#群聊" class="headerlink" title="群聊"></a>群聊</h3><blockquote>
+<ul>
+<li>get_chatrooms : 返回完整的群聊列表.</li>
+<li>search_chatrooms : 群聊搜索.</li>
+<li>update_chatroom : 获取群聊用户列表或更新该群聊.</li>
+</ul>
+</blockquote>
+<h3 id="send-msg"><a href="#send-msg" class="headerlink" title="send_msg"></a>send_msg</h3><blockquote>
+<p>send_msg(msg=’Text Message’, toUserName=None),其中的的msg是要发送的文本，toUserName是发送对象, 如果留空, 将发送给自己，返回值为True或者False.  </p>
+</blockquote>
+<h3 id="wx方法"><a href="#wx方法" class="headerlink" title="wx方法"></a>wx方法</h3><p>下面是爬虫程序中定义的微信方法：  </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">wx</span><span class="params">(name,jobinfo2)</span>:</span></span><br><span class="line">    i=itchat.get_chatrooms(update=<span class="keyword">True</span>)</span><br><span class="line">    iRoom = itchat.search_chatrooms(name)</span><br><span class="line">    <span class="keyword">for</span> room <span class="keyword">in</span> iRoom:</span><br><span class="line">        <span class="keyword">if</span> room[<span class="string">'NickName'</span>] == name:</span><br><span class="line">            userName = room[<span class="string">'UserName'</span>]</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">    itchat.send_msg(jobinfo2, userName)</span><br></pre></td></tr></table></figure>
+<h2 id="缩短网址功能"><a href="#缩短网址功能" class="headerlink" title="缩短网址功能"></a>缩短网址功能</h2><p>在程序中，还有一个方法是python3中用五行代码实现缩短网址功能.  </p>
+<p>先导入包，使用try，保证鲁棒性：<br><figure class="highlight nimrod"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> contextlib</span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    <span class="keyword">from</span> urllib.parse <span class="keyword">import</span> urlencode</span><br><span class="line"><span class="keyword">except</span> <span class="type">ImportError</span>:</span><br><span class="line">    <span class="keyword">from</span> urllib <span class="keyword">import</span> urlencode</span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    <span class="keyword">from</span> urllib.request <span class="keyword">import</span> urlopen</span><br><span class="line"><span class="keyword">except</span> <span class="type">ImportError</span>:</span><br><span class="line">    <span class="keyword">from</span> urllib2 <span class="keyword">import</span> urlopen</span><br><span class="line"><span class="keyword">import</span> sys</span><br></pre></td></tr></table></figure></p>
+<p>下面就是五行代码，方法来自<a href="https://pythontips.com/2013/08/03/a-url-shortener-in-python/" target="_blank" rel="noopener">python tips</a>  </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">make_tiny</span><span class="params">(url)</span>:</span></span><br><span class="line">    request_url = (<span class="string">'http://tinyurl.com/api-create.php?'</span> +urlencode(&#123;<span class="string">'url'</span>: url&#125;))</span><br><span class="line">    <span class="keyword">with</span> contextlib.closing(urlopen(request_url)) <span class="keyword">as</span> response:</span><br><span class="line">        <span class="keyword">return</span> response.read().decode(<span class="string">'utf-8'</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="python日期和时间"><a href="#python日期和时间" class="headerlink" title="python日期和时间"></a>python日期和时间</h2><p>内容来自<a href="http://www.runoob.com/python/python-date-time.html" target="_blank" rel="noopener">菜鸟驿站</a>  </p>
+<p>Python 提供了一个 time 和 calendar 模块可以用于格式化日期和时间。<br>时间间隔是以秒为单位的浮点小数。<br>每个时间戳都以自从1970年1月1日午夜（历元）经过了多长时间来表示。  </p>
+<p>Python 的 time 模块下有很多函数可以转换常见日期格式。<br>如函数time.time()用于获取当前时间戳, 如下实例:  </p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">import time</span><br><span class="line">t=<span class="selector-tag">time</span>.time()</span><br><span class="line"><span class="function"><span class="title">print</span><span class="params">(t)</span></span></span><br><span class="line"></span><br><span class="line">输出：<span class="number">1543149366.2743704</span></span><br></pre></td></tr></table></figure>
+<h3 id="time模块"><a href="#time模块" class="headerlink" title="time模块"></a>time模块</h3><h4 id="获取当前时间"><a href="#获取当前时间" class="headerlink" title="获取当前时间"></a>获取当前时间</h4><p>从返回浮点数的时间戳方式向时间元组转换，只要将浮点数传递给如localtime之类的函数。  </p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">import time</span><br><span class="line">localtime = time.localtime(time.time())</span><br><span class="line"><span class="builtin-name">print</span> (<span class="string">"本地时间为 :"</span>, localtime)</span><br><span class="line"></span><br><span class="line">输出：  </span><br><span class="line">本地时间为 : time.struct_time(<span class="attribute">tm_year</span>=2018, <span class="attribute">tm_mon</span>=11, <span class="attribute">tm_mday</span>=25, <span class="attribute">tm_hour</span>=20, <span class="attribute">tm_min</span>=38, <span class="attribute">tm_sec</span>=36, <span class="attribute">tm_wday</span>=6, <span class="attribute">tm_yday</span>=329, <span class="attribute">tm_isdst</span>=0)</span><br></pre></td></tr></table></figure>
+<h4 id="获取格式化时间"><a href="#获取格式化时间" class="headerlink" title="获取格式化时间"></a>获取格式化时间</h4><p>你可以根据需求选取各种格式，但是最简单的获取可读的时间模式的函数是asctime():  </p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">import time</span><br><span class="line">localtime = <span class="selector-tag">time</span>.asctime( <span class="selector-tag">time</span>.localtime(<span class="selector-tag">time</span>.time()) )</span><br><span class="line">print (<span class="string">"本地时间为 :"</span>, localtime)</span><br><span class="line"></span><br><span class="line">输出：</span><br><span class="line">本地时间为 : Sun Nov <span class="number">25</span> <span class="number">20</span>:<span class="number">40</span>:<span class="number">04</span> <span class="number">2018</span></span><br></pre></td></tr></table></figure>
+<h4 id="格式化日期"><a href="#格式化日期" class="headerlink" title="格式化日期"></a>格式化日期</h4><p>我们可以使用time模块的 strftime 方法来格式化日期：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">time</span><span class="selector-class">.strftime</span>(<span class="selector-tag">format</span><span class="selector-attr">[, t]</span>)</span><br></pre></td></tr></table></figure></p>
+<p>参数format是格式字符串  </p>
+<h3 id="datatime模块"><a href="#datatime模块" class="headerlink" title="datatime模块"></a>datatime模块</h3><p>datetime模块用于是date和time模块的合集，datetime有两个常量，MAXYEAR和MINYEAR，分别是9999和1；  </p>
+<p>datetime模块定义了5个类，分别是：  </p>
+<blockquote>
+<ul>
+<li>1.datetime.date：表示日期的类  </li>
+<li>2.datetime.datetime：表示日期时间的类  </li>
+<li>3.datetime.time：表示时间的类  </li>
+<li>4.datetime.timedelta：表示时间间隔，即两个时间点的间隔  </li>
+<li>5.datetime.tzinfo：时区的相关信息  </li>
+</ul>
+</blockquote>
+<p>程序中用到的有：<br>datetime.datetime.now()：返回当前系统时间  </p>
+<p>用python中可以看出：<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">import time</span><br><span class="line">import datetime</span><br><span class="line">t=datetime<span class="selector-class">.datetime</span><span class="selector-class">.now</span>()</span><br><span class="line"><span class="function"><span class="title">print</span><span class="params">(t)</span></span></span><br><span class="line"></span><br><span class="line">输出：</span><br><span class="line"><span class="number">2018</span>-<span class="number">11</span>-<span class="number">25</span> <span class="number">21</span>:<span class="number">01</span>:<span class="number">56.589646</span></span><br></pre></td></tr></table></figure></p>
+<p>datetime.datetime.strftime()：由日期格式转化为字符串格式  </p>
+<figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">import <span class="keyword">time</span></span><br><span class="line">import datetime</span><br><span class="line">t=datetime.datetime.now().strftime(<span class="string">"%Y-%m-%d %H:%M:%S"</span>)</span><br><span class="line"><span class="keyword">print</span>(t)</span><br><span class="line"></span><br><span class="line">输出：  </span><br><span class="line"><span class="number">2018</span>-<span class="number">11</span>-<span class="number">25</span> <span class="number">21</span>:<span class="number">00</span>:<span class="number">57</span></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/11/25/Python爬虫入门-discussion/" rel="next" title="Python爬虫入门--discussion">
+                <i class="fa fa-chevron-left"></i> Python爬虫入门--discussion
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">刘莹</p>
+              <p class="site-description motion-element" itemprop="description">生活要有仪式感</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#categories-编程"><span class="nav-number">1.</span> <span class="nav-text">categories: 编程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#itchat库"><span class="nav-number">2.</span> <span class="nav-text">itchat库</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#导入itchat库"><span class="nav-number">2.1.</span> <span class="nav-text">导入itchat库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#登陆"><span class="nav-number">2.2.</span> <span class="nav-text">登陆</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#好友"><span class="nav-number">2.3.</span> <span class="nav-text">好友</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#get-friends"><span class="nav-number">2.3.1.</span> <span class="nav-text">get_friends</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#search-friends"><span class="nav-number">2.3.2.</span> <span class="nav-text">search_friends</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#群聊"><span class="nav-number">2.4.</span> <span class="nav-text">群聊</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#send-msg"><span class="nav-number">2.5.</span> <span class="nav-text">send_msg</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#wx方法"><span class="nav-number">2.6.</span> <span class="nav-text">wx方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#缩短网址功能"><span class="nav-number">3.</span> <span class="nav-text">缩短网址功能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#python日期和时间"><span class="nav-number">4.</span> <span class="nav-text">python日期和时间</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#time模块"><span class="nav-number">4.1.</span> <span class="nav-text">time模块</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#获取当前时间"><span class="nav-number">4.1.1.</span> <span class="nav-text">获取当前时间</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#获取格式化时间"><span class="nav-number">4.1.2.</span> <span class="nav-text">获取格式化时间</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#格式化日期"><span class="nav-number">4.1.3.</span> <span class="nav-text">格式化日期</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#datatime模块"><span class="nav-number">4.2.</span> <span class="nav-text">datatime模块</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">刘莹</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
