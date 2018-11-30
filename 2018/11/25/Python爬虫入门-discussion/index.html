@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="python," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="这次爬的是牛客网求职论坛上面的岗位信息，在之前爬官方网页时候写过的方法就不在重复啦~~">
+<meta name="keywords" content="python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python爬虫入门--discussion">
+<meta property="og:url" content="https://liuying0111.github.io/2018/11/25/Python爬虫入门-discussion/index.html">
+<meta property="og:site_name" content="小可爱">
+<meta property="og:description" content="这次爬的是牛客网求职论坛上面的岗位信息，在之前爬官方网页时候写过的方法就不在重复啦~~">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/13740218-48d48dbe3e5fa8da.PNG?imageMogr2/auto-orient/strip%7CimageView2/2/w/700">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/13740218-222e18083d3e1868.PNG?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/13740218-d8f397faadf52e4f.PNG?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/13740218-f0c16ac192ade692.PNG?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/13740218-b1063718cf65c76d.PNG?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/13740218-73f0bae5e0113554.PNG?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2018-11-25T10:02:56.165Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Python爬虫入门--discussion">
+<meta name="twitter:description" content="这次爬的是牛客网求职论坛上面的岗位信息，在之前爬官方网页时候写过的方法就不在重复啦~~">
+<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/13740218-48d48dbe3e5fa8da.PNG?imageMogr2/auto-orient/strip%7CimageView2/2/w/700">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://liuying0111.github.io/2018/11/25/Python爬虫入门-discussion/"/>
+
+
+
+
+
+  <title>Python爬虫入门--discussion | 小可爱</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">小可爱</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">生活要有仪式感</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://liuying0111.github.io/2018/11/25/Python爬虫入门-discussion/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="刘莹">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小可爱">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Python爬虫入门--discussion</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-25T18:01:46+08:00">
+                2018-11-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/编程/" itemprop="url" rel="index">
+                    <span itemprop="name">编程</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>这次爬的是<a href="https://www.nowcoder.com/discuss?type=7&amp;order=3&amp;pageSize=30&amp;query=&amp;page=1" target="_blank" rel="noopener">牛客网求职论坛</a>上面的岗位信息，在之前爬官方网页时候写过的方法就不在重复啦~~  </p>
+<a id="more"></a>  
+<h3 id="解析HTML代码"><a href="#解析HTML代码" class="headerlink" title="解析HTML代码"></a>解析HTML代码</h3><p><a href="https://www.nowcoder.com/discuss?type=7&amp;order=3&amp;pageSize=30&amp;query=&amp;page=1" target="_blank" rel="noopener">牛客网求职论坛</a>的HTML代码：<br><img src="https://upload-images.jianshu.io/upload_images/13740218-48d48dbe3e5fa8da.PNG?imageMogr2/auto-orient/strip%7CimageView2/2/w/700" alt="">  </p>
+<p>我们的处理方式是，前三个不获取，从第四条信息开始：job_div[3:]  </p>
+<p>每条信息只获取其职位名称（代码中的tittle），然后将每条信息模拟点开，将其中的详细信息获取到；  </p>
+<p>HTML代码的规律：每条信息都在”div”, {“class”: “discuss-main clearfix”}中，div中的代码如下：  </p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"discuss-main clearfix"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"/discuss/144771?type=7&amp;order=3&amp;pos=5&amp;page=1"</span></span></span><br><span class="line"><span class="tag"><span class="attr">target</span>=<span class="string">"_blank"</span>&gt;</span></span><br><span class="line">字节跳动内推码 5GZCACC</span><br><span class="line"><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"/discuss/144771?type=7&amp;order=3&amp;pos=5&amp;page=1"</span></span></span><br><span class="line"><span class="tag"><span class="attr">target</span>=<span class="string">"_blank"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"/discuss/tag/665?type=7"</span> <span class="attr">class</span>=<span class="string">"tag-label"</span></span></span><br><span class="line"><span class="tag"><span class="attr">target</span>=<span class="string">"_blank"</span>&gt;</span>字节跳动<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"feed-foot"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"feed-origin"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"feed-tip"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">"d-name level-color-5</span></span></span><br><span class="line"><span class="tag"><span class="string"> js-nc-card</span></span></span><br><span class="line"><span class="tag"><span class="string">"</span></span></span><br><span class="line"><span class="tag"><span class="attr">data-card-uid</span>=<span class="string">"1529636"</span> <span class="attr">href</span>=<span class="string">"/profile/1529636</span></span></span><br><span class="line"><span class="tag"><span class="string">"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>我们要做的是：①获取<code>a</code>中的岗位信息（如：字节跳动内推码 5GZCACC）<br>             ②模拟点开<code>a</code>中的链接，可以调用之前定义的方法getPageContent(url)，然后在对return的内容进行内容的提取。  </p>
+<p>具体的python代码如下：  </p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">def getJobInfo(page_content):</span><br><span class="line">    <span class="keyword">data</span>=[]</span><br><span class="line">    i = <span class="number">1</span></span><br><span class="line"></span><br><span class="line">    job_div = page_content.findAll(<span class="string">"div"</span>, &#123;<span class="string">"class"</span>: <span class="string">"discuss-main clearfix"</span>&#125;)</span><br><span class="line">    job_div=(job_div[<span class="number">3</span>:])</span><br><span class="line">    <span class="keyword">for</span> links <span class="keyword">in</span> job_div:</span><br><span class="line">        link1=links.find(<span class="string">'a'</span>)</span><br><span class="line">        tittle=<span class="string">'\n'</span>+<span class="string">'('</span>+str(i)+<span class="string">')'</span>+<span class="string">'岗位信息：'</span>+link1.get_text().replace(<span class="string">'\n'</span>,<span class="string">''</span>)+<span class="string">'\n'</span> #获取每一条的标题（岗位信息）</span><br><span class="line">        i = i + <span class="number">1</span></span><br><span class="line">        link2=<span class="string">'https://www.nowcoder.com'</span>+link1.<span class="keyword">get</span>(<span class="string">'href'</span>)   #获取每条岗位信息的链接</span><br><span class="line">        link3=link2.split(<span class="string">'\n'</span>)</span><br><span class="line">        <span class="keyword">for</span> req <span class="keyword">in</span> link3:</span><br><span class="line">            xx_1=getPageContent(req)</span><br><span class="line">            xx_2=xx_1.findAll(<span class="string">"div"</span>,&#123;<span class="string">"class"</span>:<span class="string">"post-topic-des nc-post-content"</span>&#125;)</span><br><span class="line">            <span class="keyword">for</span> req_1 <span class="keyword">in</span> xx_2:</span><br><span class="line">                xx_3=<span class="string">'详细介绍:'</span>+(req_1.get_text().replace(<span class="string">'-------------------------------------------------------------'</span></span><br><span class="line">                                                                    <span class="string">'-------------------------------------------------------------'</span></span><br><span class="line">                                                               <span class="string">'----------------'</span>,<span class="string">'\n'</span>)+<span class="string">'\n'</span>).replace(<span class="string">'|'</span>,<span class="string">' '</span>)+<span class="string">'\n'</span></span><br><span class="line">                xx_3=<span class="string">' '</span>.join(xx_3.split())</span><br><span class="line">                xx_4=xx_3.replace(<span class="string">'【'</span>,(<span class="string">'\n'</span>+<span class="string">'【'</span>)).replace(<span class="string">' -'</span>,<span class="string">'\n'</span>).replace(<span class="string">'  '</span>,<span class="string">'\n'</span>)          </span><br><span class="line">                <span class="keyword">data</span>.append((tittle + xx_4))</span><br><span class="line">    <span class="keyword">for</span> h <span class="keyword">in</span> <span class="keyword">data</span>:</span><br><span class="line">        print(h)</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">data</span></span><br></pre></td></tr></table></figure>
+<h3 id="标序号"><a href="#标序号" class="headerlink" title="标序号"></a>标序号</h3><p>由于每条信息爬出来都很多，看起来很乱，所以想对每条信息进行标序，只需在开始定义i=1，然后在获取tittle时加上str(i)，然后在后面加上 i = i + 1即可，具体的代码见上面。  </p>
+<h3 id="split-方法"><a href="#split-方法" class="headerlink" title="split()方法"></a>split()方法</h3><p>python split（）通过指定分隔符对字符串进行切片，如果参数num有指定值，则仅分隔num个字符串。  </p>
+<p>语法：  </p>
+<figure class="highlight processing"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">str</span>.<span class="built_in">split</span>(<span class="built_in">str</span>=<span class="string">""</span>,num=string.cout(<span class="built_in">str</span>))</span><br></pre></td></tr></table></figure>
+<p>str:分隔符，默认所有的空字符，包括空格、换行（\n）、制表符（\t）等<br>num：分割次数  </p>
+<p>split是对字符串进行处理，返回值是列表list类型的；  </p>
+<p>本程序中，<code>link3=link2.split(&#39;\n&#39;)</code>：因为link2是字符串类型，要把它变成list类型，才能在后面对它使用for循环，因此采用split方法，在所有\n的地方分隔开。  </p>
+<p>link2为：<br><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">http<span class="variable">s:</span>//www.nowcoder.<span class="keyword">com</span>/discuss/<span class="number">140290</span>?<span class="built_in">type</span>=<span class="number">7</span>&amp;order=<span class="number">3</span>&amp;pos=<span class="number">4</span>&amp;page=<span class="number">2</span></span><br><span class="line">http<span class="variable">s:</span>//www.nowcoder.<span class="keyword">com</span>/discuss/<span class="number">144831</span>?<span class="built_in">type</span>=<span class="number">7</span>&amp;order=<span class="number">3</span>&amp;pos=<span class="number">5</span>&amp;page=<span class="number">1</span></span><br><span class="line">http<span class="variable">s:</span>//www.nowcoder.<span class="keyword">com</span>/discuss/<span class="number">144830</span>?<span class="built_in">type</span>=<span class="number">7</span>&amp;order=<span class="number">3</span>&amp;pos=<span class="number">6</span>&amp;page=<span class="number">1</span></span><br><span class="line">http<span class="variable">s:</span>//www.nowcoder.<span class="keyword">com</span>/discuss/<span class="number">144817</span>?<span class="built_in">type</span>=<span class="number">7</span>&amp;order=<span class="number">3</span>&amp;pos=<span class="number">7</span>&amp;page=<span class="number">0</span></span><br><span class="line">http<span class="variable">s:</span>//www.nowcoder.<span class="keyword">com</span>/discuss/<span class="number">144788</span>?<span class="built_in">type</span>=<span class="number">7</span>&amp;order=<span class="number">3</span>&amp;pos=<span class="number">8</span>&amp;page=<span class="number">1</span></span><br></pre></td></tr></table></figure></p>
+<p>经过split方法后，得到的link3为：<br><figure class="highlight scheme"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[<span class="symbol">'https://www.nowcoder.com/discuss/140290?type=7&amp;order=3&amp;pos=4&amp;page=2</span>']</span><br><span class="line">[<span class="symbol">'https://www.nowcoder.com/discuss/144831?type=7&amp;order=3&amp;pos=5&amp;page=1</span>']</span><br><span class="line">[<span class="symbol">'https://www.nowcoder.com/discuss/144830?type=7&amp;order=3&amp;pos=6&amp;page=1</span>']</span><br><span class="line">[<span class="symbol">'https://www.nowcoder.com/discuss/144817?type=7&amp;order=3&amp;pos=7&amp;page=0</span>']</span><br><span class="line">[<span class="symbol">'https://www.nowcoder.com/discuss/144788?type=7&amp;order=3&amp;pos=8&amp;page=1</span>']</span><br></pre></td></tr></table></figure></p>
+<h3 id="join-方法"><a href="#join-方法" class="headerlink" title="join()方法"></a>join()方法</h3><p>因为打印出来的详细信息格式非常乱，每一句中间隔了好多的空格，如下所示：  </p>
+<p><img src="https://upload-images.jianshu.io/upload_images/13740218-222e18083d3e1868.PNG?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">  </p>
+<p>为了解决这种现象，用到了下面这个函数，<code>xx_3=&#39; &#39;.join(xx_3.split())</code>  </p>
+<p>其中，先介绍一下python join()方法，用于将序列中的元素以指定的字符连接成一个新的字符串。<br>语法： <code>str.join(sequence)</code>  </p>
+<p>sequence–要连接的元素序列</p>
+<p>返回通过指定字符连接序列中元素后，生成的新的字符串。  </p>
+<p><strong>注：</strong>str.join(元组、列表、字典、字符串)之后生成的只能是字符串。所以有时候可以用join方法将元组、列表这些变成字符串。  </p>
+<p>接着上面的问题，先对xx_3经进行split方法，即<br><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">xx_3</span>=xx_3.split()</span><br><span class="line"><span class="builtin-name">print</span>(xx_3)</span><br></pre></td></tr></table></figure></p>
+<p>处理后的结果为，可以看出把所有的空格处切为一个个的字符串  </p>
+<p><img src="https://upload-images.jianshu.io/upload_images/13740218-d8f397faadf52e4f.PNG?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">  </p>
+<p>然后再用join方法可以把上面的每个字符串之间用一个空格连接起来，就把之前句子与句子之间的多个空格变成了一个空格，问题解决。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/13740218-f0c16ac192ade692.PNG?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">  </p>
+<h3 id="append（）方法"><a href="#append（）方法" class="headerlink" title="append（）方法"></a>append（）方法</h3><p>append方法用于在列表末尾添加新的对象。<br>后面的做法就是把岗位信息和详细信息用append方法加在data（之前定义的空列表上），然后一条一条打印出来。</p>
+<h3 id="python中常用的数据结构学习"><a href="#python中常用的数据结构学习" class="headerlink" title="python中常用的数据结构学习"></a>python中常用的数据结构学习</h3><h4 id="列表list"><a href="#列表list" class="headerlink" title="列表list"></a>列表list</h4><blockquote>
+<p>Python中列表是可变的，这是它区别于字符串和元组的最重要的特点，一句话概括即：列表可以修改，而字符串和元组不能。  </p>
+</blockquote>
+<blockquote>
+<p>list是python内置的一种数据类型列表，是一种有序的集合，可以随时添加和删除其中的元素。  </p>
+</blockquote>
+<p><strong>和Java相比的不同点：</strong>  </p>
+<p>1.如果要取最后一个元素，除了计算索引位置外，还可以用-1做索引，直接获取最后一个元素：  、</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">classmates=[<span class="string">'肖洒'</span>,<span class="string">'美洒'</span>,<span class="string">'洒哥哥'</span>]</span><br><span class="line"><span class="function"><span class="title">print</span><span class="params">(classmates[-<span class="number">1</span>])</span></span></span><br><span class="line"></span><br><span class="line">输出---洒哥哥</span><br></pre></td></tr></table></figure>
+<p>2.可以把元素插入到指定的文职，比如索引号为1的位置：<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">classmates=[<span class="string">'肖洒'</span>,<span class="string">'美洒'</span>,<span class="string">'洒哥哥'</span>]</span><br><span class="line">classmates.insert(<span class="number">1</span>,<span class="string">'铁丑'</span>)</span><br><span class="line"><span class="function"><span class="title">print</span><span class="params">(classmates)</span></span></span><br><span class="line"></span><br><span class="line">输出---[<span class="string">'肖洒'</span>, <span class="string">'铁丑'</span>, <span class="string">'美洒'</span>, <span class="string">'洒哥哥'</span>]</span><br></pre></td></tr></table></figure></p>
+<p>3.要删除list末尾的元素，用pop()方法，删除指定位置的元素，用pop(i)方法，其中i是索引位置。  </p>
+<p>4.list里面的元素的数据类型也可以是不同的：<br><figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">L</span>=[<span class="string">'apple'</span>,<span class="string">'123'</span>,<span class="string">'True'</span>]</span><br></pre></td></tr></table></figure></p>
+<p>5.list元素也可以是另一个list：<br><figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">s=[<span class="string">'python'</span>,<span class="string">'java'</span>,[<span class="string">'肖洒'</span>,<span class="string">'美洒'</span>,<span class="string">'洒哥哥'</span>],<span class="string">'c++'</span>]</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">len</span>(s))</span><br><span class="line"></span><br><span class="line">输出<span class="comment">--4</span></span><br></pre></td></tr></table></figure></p>
+<h4 id="元组tuple和序列"><a href="#元组tuple和序列" class="headerlink" title="元组tuple和序列"></a>元组tuple和序列</h4><blockquote>
+<p>tuple和list非常相似，但是tuple一旦初始化就不能修改。因为tuple不可变，所以代码更安全。如果可能，能用tuple代替list就尽量用tuple。  </p>
+</blockquote>
+<p>元组由若干逗号分隔的值组成，例如：<br><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;</span>&gt; t = <span class="number">12345</span>, <span class="number">54321</span>, <span class="string">'hello!'</span></span><br><span class="line"><span class="meta">&gt;&gt;</span>&gt; t[<span class="number">0</span>]</span><br><span class="line"><span class="number">12345</span></span><br><span class="line"><span class="meta">&gt;&gt;</span>&gt; t</span><br><span class="line">(<span class="number">12345</span>, <span class="number">54321</span>, <span class="string">'hello!'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;</span>&gt; <span class="comment"># Tuples may be nested:</span></span><br><span class="line">... u = t, (<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>)</span><br><span class="line"><span class="meta">&gt;&gt;</span>&gt; u</span><br><span class="line">((<span class="number">12345</span>, <span class="number">54321</span>, <span class="string">'hello!'</span>), (<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>))</span><br></pre></td></tr></table></figure></p>
+<p>如你所见，元组在输出时总是有括号的，以便于正确表达嵌套结构。在输入时可能有或没有括号， 不过括号通常是必须的（如果元组是更大的表达式的一部分）。  </p>
+<p><strong>需要注意的地方：</strong>  </p>
+<p>1.只有1个元素的tuple定义时必须加一个逗号，来消除歧义：<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">t=(<span class="number">1</span>,)</span><br><span class="line"><span class="function"><span class="title">print</span><span class="params">(t)</span></span></span><br><span class="line"></span><br><span class="line">输出---<span class="number">1</span></span><br></pre></td></tr></table></figure></p>
+<p>2.也存在“可变的”tuple:<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">t = ('a', 'b', ['A', 'B'] )</span><br><span class="line">t[<span class="string">2</span>][<span class="symbol">0</span>] = 'X'</span><br><span class="line">t[<span class="string">2</span>][<span class="symbol">1</span>] = 'Y'</span><br><span class="line">print(t)</span><br><span class="line"></span><br><span class="line">输出---('a', 'b', ['X', 'Y'])</span><br></pre></td></tr></table></figure></p>
+<p>这个tuple定义的时候有3个元素，分别是’a’，’b’和一个list。  </p>
+<p><img src="https://upload-images.jianshu.io/upload_images/13740218-b1063718cf65c76d.PNG?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">  </p>
+<p>当我们把list的元素’A’和’B’修改为’X’和’Y’后，tuple变为：  </p>
+<p><img src="https://upload-images.jianshu.io/upload_images/13740218-73f0bae5e0113554.PNG?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">  </p>
+<p>表面上看，tuple的元素确实变了，但其实变的不是tuple的元素，而是list的元素。tuple一开始指向的list并没有改成别的list，所以，tuple所谓的“不变”是说，tuple的每个元素，指向永远不变。即指向’a’，就不能改成指向’b’，指向一个list，就不能改成指向其他对象，但指向的这个list本身是可变的！  </p>
+<h4 id="集合set"><a href="#集合set" class="headerlink" title="集合set"></a>集合set</h4><blockquote>
+<p>集合是一个无序不重复元素的集。基本功能包括关系测试和消除重复元素。可以用大括号({})创建集合。注意：如果要创建一个空集合，你必须用 set() 而不是 {} ,后者创建一个空的字典。  </p>
+</blockquote>
+<h4 id="字典dict"><a href="#字典dict" class="headerlink" title="字典dict"></a>字典dict</h4><blockquote>
+<p>序列是以连续的整数为索引，与此不同的是，字典以关键字为索引，关键字可以是任意不可变类型，通常用字符串或数值。理解字典的最佳方式是把它看做无序的键=&gt;值对集合。在同一个字典之内，关键字必须是互不相同。  一对大括号创建一个空的字典：{}。  </p>
+</blockquote>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;</span>&gt; tel = &#123;<span class="string">'jack'</span>: <span class="number">4098</span>, <span class="string">'sape'</span>: <span class="number">4139</span>&#125;</span><br><span class="line"><span class="meta">&gt;&gt;</span>&gt; tel[<span class="string">'guido'</span>] = <span class="number">4127</span></span><br><span class="line"><span class="meta">&gt;&gt;</span>&gt; tel</span><br><span class="line">&#123;<span class="string">'sape'</span>: <span class="number">4139</span>, <span class="string">'guido'</span>: <span class="number">4127</span>, <span class="string">'jack'</span>: <span class="number">4098</span>&#125;</span><br><span class="line"><span class="meta">&gt;&gt;</span>&gt; tel[<span class="string">'jack'</span>]</span><br><span class="line"><span class="number">4098</span></span><br><span class="line"><span class="meta">&gt;&gt;</span>&gt; del tel[<span class="string">'sape'</span>]</span><br><span class="line"><span class="meta">&gt;&gt;</span>&gt; tel[<span class="string">'irv'</span>] = <span class="number">4127</span></span><br><span class="line"><span class="meta">&gt;&gt;</span>&gt; tel</span><br><span class="line">&#123;<span class="string">'guido'</span>: <span class="number">4127</span>, <span class="string">'irv'</span>: <span class="number">4127</span>, <span class="string">'jack'</span>: <span class="number">4098</span>&#125;</span><br><span class="line"><span class="meta">&gt;&gt;</span>&gt; list(tel.keys())</span><br><span class="line">[<span class="string">'irv'</span>, <span class="string">'guido'</span>, <span class="string">'jack'</span>]</span><br><span class="line"><span class="meta">&gt;&gt;</span>&gt; sorted(tel.keys())</span><br><span class="line">[<span class="string">'guido'</span>, <span class="string">'irv'</span>, <span class="string">'jack'</span>]</span><br><span class="line"><span class="meta">&gt;&gt;</span>&gt; <span class="string">'guido'</span> in tel</span><br><span class="line">True</span><br><span class="line"><span class="meta">&gt;&gt;</span>&gt; <span class="string">'jack'</span> not in tel</span><br><span class="line">False</span><br></pre></td></tr></table></figure>
+<h4 id="遍历技巧"><a href="#遍历技巧" class="headerlink" title="遍历技巧"></a>遍历技巧</h4><p>在字典中遍历时，关键字和对应的值可以使用 items() 方法同时解读出来：<br><figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">knights = &#123;<span class="string">'gallahad'</span>: <span class="string">'the pure'</span>, <span class="string">'robin'</span>: <span class="string">'the brave'</span>&#125;</span><br><span class="line"><span class="keyword">for</span> k, v <span class="keyword">in</span> knights.items():</span><br><span class="line">    <span class="built_in">print</span>(k, v)</span><br><span class="line"></span><br><span class="line">输出<span class="comment">---gallahad the pure</span></span><br><span class="line">       robin the brave</span><br></pre></td></tr></table></figure></p>
+<p>在序列中遍历时，索引位置和对应值可以使用 enumerate() 函数同时得到：<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> <span class="selector-tag">i</span>, v <span class="keyword">in</span> enumerate([<span class="string">'tic'</span>, <span class="string">'tac'</span>, <span class="string">'toe'</span>]):</span><br><span class="line">    print(<span class="selector-tag">i</span>, v)</span><br><span class="line"></span><br><span class="line">输出：</span><br><span class="line"><span class="number">0</span> tic</span><br><span class="line"><span class="number">1</span> tac</span><br><span class="line"><span class="number">2</span> toe</span><br></pre></td></tr></table></figure></p>
+<p>同时遍历两个或更多的序列，可以使用 zip() 组合：<br><figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">questions = [<span class="symbol">'name</span>', <span class="symbol">'quest</span>', <span class="symbol">'favorite</span> color']</span><br><span class="line">answers = [<span class="symbol">'lancelot</span>', <span class="symbol">'the</span> holy grail', <span class="symbol">'blue</span>']</span><br><span class="line"><span class="keyword">for</span> q, a <span class="keyword">in</span> zip(questions, answers):</span><br><span class="line">    print(<span class="symbol">'What</span> <span class="keyword">is</span> your &#123;<span class="number">0</span>&#125;?  It <span class="keyword">is</span> &#123;<span class="number">1</span>&#125;.'.format(q, a))</span><br><span class="line"></span><br><span class="line">输出：</span><br><span class="line">What <span class="keyword">is</span> your name?  It <span class="keyword">is</span> lancelot.</span><br><span class="line">What <span class="keyword">is</span> your quest?  It <span class="keyword">is</span> the holy grail.</span><br><span class="line">What <span class="keyword">is</span> your favorite color?  It <span class="keyword">is</span> blue.</span><br></pre></td></tr></table></figure></p>
+<p>要反向遍历一个序列，首先指定这个序列，然后调用 reversed() 函数：<br><figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> reversed(<span class="built_in">range</span>(<span class="number">1</span>, <span class="number">10</span>, <span class="number">2</span>)):</span><br><span class="line">    <span class="built_in">print</span>(i)</span><br><span class="line"></span><br><span class="line">输出：</span><br><span class="line"><span class="number">9</span></span><br><span class="line"><span class="number">7</span></span><br><span class="line"><span class="number">5</span></span><br><span class="line"><span class="number">3</span></span><br><span class="line"><span class="number">1</span></span><br></pre></td></tr></table></figure></p>
+<p>要按顺序遍历一个序列，使用 sorted() 函数返回一个已排序的序列，并不修改原值：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">basket = [<span class="string">'apple'</span>, <span class="string">'orange'</span>, <span class="string">'apple'</span>, <span class="string">'pear'</span>, <span class="string">'orange'</span>, <span class="string">'banana'</span>]</span><br><span class="line"><span class="keyword">for</span> f <span class="keyword">in</span> sorted(<span class="built_in">set</span>(basket)):</span><br><span class="line">    <span class="built_in">print</span>(f)</span><br><span class="line"></span><br><span class="line">输出：</span><br><span class="line">apple</span><br><span class="line">banana</span><br><span class="line">orange</span><br><span class="line">pear</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/python/" rel="tag"># python</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/11/24/Python爬虫入门--official/" rel="next" title="Python爬虫入门--official">
+                <i class="fa fa-chevron-left"></i> Python爬虫入门--official
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/11/25/Python爬虫入门-weoffer/" rel="prev" title="Python爬虫入门-weoffer">
+                Python爬虫入门-weoffer <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">刘莹</p>
+              <p class="site-description motion-element" itemprop="description">生活要有仪式感</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-globe"></i>
+                推荐阅读
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://x-nicolo.github.io/" title="肖洒" target="_blank">肖洒</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000" title="廖雪峰python学习" target="_blank">廖雪峰python学习</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.w3school.com.cn/html/index.asp" title="W3school" target="_blank">W3school</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.nowcoder.com/" title="牛客网" target="_blank">牛客网</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.runoob.com/" title="菜鸟教程" target="_blank">菜鸟教程</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#解析HTML代码"><span class="nav-number">1.</span> <span class="nav-text">解析HTML代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#标序号"><span class="nav-number">2.</span> <span class="nav-text">标序号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#split-方法"><span class="nav-number">3.</span> <span class="nav-text">split()方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#join-方法"><span class="nav-number">4.</span> <span class="nav-text">join()方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#append（）方法"><span class="nav-number">5.</span> <span class="nav-text">append（）方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#python中常用的数据结构学习"><span class="nav-number">6.</span> <span class="nav-text">python中常用的数据结构学习</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#列表list"><span class="nav-number">6.1.</span> <span class="nav-text">列表list</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#元组tuple和序列"><span class="nav-number">6.2.</span> <span class="nav-text">元组tuple和序列</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#集合set"><span class="nav-number">6.3.</span> <span class="nav-text">集合set</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#字典dict"><span class="nav-number">6.4.</span> <span class="nav-text">字典dict</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#遍历技巧"><span class="nav-number">6.5.</span> <span class="nav-text">遍历技巧</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">刘莹</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
