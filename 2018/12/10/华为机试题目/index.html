@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="python," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="2018/11/26  20:38   开始刷华为机试题目，共108道，加油鸭~   记录一下自己的找工作心路历程，希望明年可以拿offer拿到手软~~">
+<meta name="keywords" content="python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="华为机试题目">
+<meta property="og:url" content="https://liuying0111.github.io/2018/12/10/华为机试题目/index.html">
+<meta property="og:site_name" content="小可爱">
+<meta property="og:description" content="2018/11/26  20:38   开始刷华为机试题目，共108道，加油鸭~   记录一下自己的找工作心路历程，希望明年可以拿offer拿到手软~~">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/13740218-df6512833c1912d8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/13740218-f0f8a3daf9088da6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/13740218-6e5ee647ebd24480.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2018-12-10T02:25:45.605Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="华为机试题目">
+<meta name="twitter:description" content="2018/11/26  20:38   开始刷华为机试题目，共108道，加油鸭~   记录一下自己的找工作心路历程，希望明年可以拿offer拿到手软~~">
+<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/13740218-df6512833c1912d8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://liuying0111.github.io/2018/12/10/华为机试题目/"/>
+
+
+
+
+
+  <title>华为机试题目 | 小可爱</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">小可爱</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">生活要有仪式感</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://liuying0111.github.io/2018/12/10/华为机试题目/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="刘莹">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小可爱">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">华为机试题目</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-10T10:21:09+08:00">
+                2018-12-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/编程/" itemprop="url" rel="index">
+                    <span itemprop="name">编程</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>2018/11/26  20:38  </p>
+<p>开始刷华为机试题目，共108道，加油鸭~  </p>
+<p>记录一下自己的找工作心路历程，希望明年可以拿offer拿到手软~~  </p>
+<a id="more"></a>  
+<h2 id="华为机试在线测试"><a href="#华为机试在线测试" class="headerlink" title="华为机试在线测试"></a>华为机试在线测试</h2><h3 id="字符串最后一个单词的长度"><a href="#字符串最后一个单词的长度" class="headerlink" title="字符串最后一个单词的长度"></a>字符串最后一个单词的长度</h3><figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">题目描述</span><br><span class="line">计算字符串最后一个单词的长度，单词以空格隔开。 </span><br><span class="line"></span><br><span class="line"><span class="section">输入描述:</span></span><br><span class="line">一行字符串，非空，长度小于5000。</span><br><span class="line"></span><br><span class="line"><span class="section">输出描述:</span></span><br><span class="line">整数N，最后一个单词的长度。</span><br><span class="line"></span><br><span class="line">示例</span><br><span class="line">输入  hello world</span><br><span class="line">输出  5</span><br></pre></td></tr></table></figure>
+<p>python代码：  </p>
+<figure class="highlight hsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">str</span> = <span class="keyword">input</span>().strip().split()</span><br><span class="line"><span class="keyword">print</span>(len(<span class="keyword">str</span>[<span class="number">-1</span>]))</span><br></pre></td></tr></table></figure>
+<h3 id="计算字符个数"><a href="#计算字符个数" class="headerlink" title="计算字符个数"></a>计算字符个数</h3><figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">题目描述</span><br><span class="line">写出一个程序，接受一个由字母和数字组成的字符串，和一个字符，然后输出输入字符串中含有该字符的个数。不区分大小写。</span><br><span class="line"></span><br><span class="line"><span class="section">输入描述:</span></span><br><span class="line">输入一个有字母和数字以及空格组成的字符串，和一个字符。</span><br><span class="line"></span><br><span class="line"><span class="section">输出描述:</span></span><br><span class="line">输出输入字符串中含有该字符的个数。</span><br><span class="line"></span><br><span class="line">示例1</span><br><span class="line">输入</span><br><span class="line">ABCDEF A</span><br><span class="line">输出</span><br><span class="line">1</span><br></pre></td></tr></table></figure>
+<p>python代码:  </p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">a</span>=input().lower()</span><br><span class="line"><span class="attribute">b</span>=input().lower()</span><br><span class="line"><span class="builtin-name">print</span>(a.count(b))</span><br></pre></td></tr></table></figure>
+<h4 id="lower"><a href="#lower" class="headerlink" title="lower()"></a>lower()</h4><p>lower() 方法转换字符串中所有大写字符为小写。<br>增加本题的鲁棒性。  </p>
+<h4 id="count"><a href="#count" class="headerlink" title="count()"></a>count()</h4><p>count() 方法用于统计字符串里某个字符出现的次数。可选参数为在字符串搜索的开始与结束位置。<br>str.count(sub, start= 0,end=len(string))  </p>
+<h3 id="明明的随机数"><a href="#明明的随机数" class="headerlink" title="明明的随机数"></a>明明的随机数</h3><figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">题目描述</span><br><span class="line">明明想在学校中请一些同学一起做一项问卷调查，为了实验的客观性，他先用计算机生成了<span class="built_in">N</span>个<span class="number">1</span>到<span class="number">1000</span>之间的随机整数（<span class="built_in">N</span>≤<span class="number">1000</span>），对于其中重复的数字，只保留一个，把其余相同的数去掉，不同的数对应着不同的学生的学号。然后再把这些数从小到大排序，按照排好的顺序去找同学做调查。请你协助明明完成“去重”与“排序”的工作。</span><br><span class="line"></span><br><span class="line">Input Param </span><br><span class="line">     <span class="built_in">n</span>               输入随机数的个数     </span><br><span class="line"> inputArray      <span class="built_in">n</span>个随机整数组成的数组 </span><br><span class="line">Return <span class="built_in">Value</span></span><br><span class="line">     OutputArray    输出处理后的随机整数</span><br><span class="line">注：测试用例保证输入参数的正确性，答题者无需验证。测试用例不止一组。</span><br><span class="line"></span><br><span class="line">输入描述<span class="symbol">:</span></span><br><span class="line">输入多行，先输入随机整数的个数，再输入相应个数的整数</span><br><span class="line"></span><br><span class="line">输出描述<span class="symbol">:</span></span><br><span class="line">返回多行，处理后的结果</span><br><span class="line"></span><br><span class="line">示例<span class="number">1</span></span><br><span class="line">输入</span><br><span class="line"><span class="number">11</span></span><br><span class="line"><span class="number">10</span></span><br><span class="line"><span class="number">20</span></span><br><span class="line"><span class="number">40</span></span><br><span class="line"><span class="number">32</span></span><br><span class="line"><span class="number">67</span></span><br><span class="line"><span class="number">40</span></span><br><span class="line"><span class="number">20</span></span><br><span class="line"><span class="number">89</span></span><br><span class="line"><span class="number">300</span></span><br><span class="line"><span class="number">400</span></span><br><span class="line"><span class="number">15</span></span><br><span class="line">输出</span><br><span class="line"><span class="number">10</span></span><br><span class="line"><span class="number">15</span></span><br><span class="line"><span class="number">20</span></span><br><span class="line"><span class="number">32</span></span><br><span class="line"><span class="number">40</span></span><br><span class="line"><span class="number">67</span></span><br><span class="line"><span class="number">89</span></span><br><span class="line"><span class="number">300</span></span><br><span class="line"><span class="number">400</span></span><br></pre></td></tr></table></figure>
+<p>代码：<br><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> True:</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        <span class="keyword">a</span>=<span class="keyword">int</span>(<span class="built_in">input</span>())</span><br><span class="line">        <span class="keyword">res</span>=<span class="keyword">set</span>()</span><br><span class="line">        <span class="keyword">for</span> i in <span class="built_in">range</span>(<span class="keyword">a</span>):</span><br><span class="line">            <span class="keyword">res</span>.<span class="built_in">add</span>(<span class="keyword">int</span>(<span class="built_in">input</span>()))</span><br><span class="line">        <span class="keyword">for</span> i in sorted(<span class="keyword">res</span>):</span><br><span class="line">            <span class="keyword">print</span>(i)</span><br><span class="line">    excep<span class="variable">t:</span></span><br><span class="line">        <span class="keyword">break</span></span><br></pre></td></tr></table></figure></p>
+<p>分析：之前自己编的时候总是有问题，需要注意：题目中说测试用例不止一组，所以要加<strong>while True:</strong>只有有数据来就运行它，还要加  <strong>try-except</strong>，避免出现问题，成为死循环（在机试环境下试了，不加这两个，就不能通过），所以要注意！！！！  </p>
+<h4 id="sort和sorted的区别"><a href="#sort和sorted的区别" class="headerlink" title="sort和sorted的区别"></a>sort和sorted的区别</h4><p>sort是应用在list上的方法，sorted可以对所有可迭代的对象进行排序操作。<br>list的sort方法返回的是对已经存在的列表进行操作，而内建函数sorted方法返回的是一个新的list，而不是在原来的基础上进行的操作。<br>例如：<br><figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; a=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">5</span>,<span class="number">3</span>,<span class="number">9</span>,<span class="number">4</span>,<span class="number">6</span>,<span class="number">8</span>,<span class="number">7</span>,<span class="number">0</span>,<span class="number">12</span>]</span><br><span class="line">&gt;&gt;&gt; a.sort()</span><br><span class="line">&gt;&gt;&gt; a</span><br><span class="line">[<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">12</span>]</span><br><span class="line"></span><br><span class="line">&gt;&gt;&gt; a=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">5</span>,<span class="number">3</span>,<span class="number">9</span>,<span class="number">4</span>,<span class="number">6</span>,<span class="number">8</span>,<span class="number">7</span>,<span class="number">0</span>,<span class="number">12</span>]</span><br><span class="line">&gt;&gt;&gt; sorted(a)</span><br><span class="line">[<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">12</span>]</span><br><span class="line">&gt;&gt;&gt; a</span><br><span class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">5</span>, <span class="number">3</span>, <span class="number">9</span>, <span class="number">4</span>, <span class="number">6</span>, <span class="number">8</span>, <span class="number">7</span>, <span class="number">0</span>, <span class="number">12</span>]</span><br><span class="line"></span><br><span class="line">区别：</span><br><span class="line">对于一个无序的列表a，调用a.sort()，对a进行排序后返回a，sort()函数修改待排序的列表内容。</span><br><span class="line">而对于同样一个无序的列表a，调用sorted(a)，对a进行排序后返回一个新的列表，而对a不产生影响。</span><br></pre></td></tr></table></figure></p>
+<h3 id="字符串分隔"><a href="#字符串分隔" class="headerlink" title="字符串分隔"></a>字符串分隔</h3><figure class="highlight dns"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">题目描述</span><br><span class="line">•连续输入字符串，请按长度为<span class="number">8</span>拆分每个字符串后输出到新的字符串数组； </span><br><span class="line">•长度不是<span class="number">8</span>整数倍的字符串请在后面补数字<span class="number">0</span>，空字符串不处理。 </span><br><span class="line"></span><br><span class="line">输入描述:</span><br><span class="line">连续输入字符串(输入<span class="number">2</span>次,每个字符串长度小于<span class="number">100</span>)</span><br><span class="line"></span><br><span class="line">输出描述:</span><br><span class="line">输出到长度为<span class="number">8</span>的新字符串数组</span><br><span class="line"></span><br><span class="line">示例<span class="number">1</span></span><br><span class="line">输入</span><br><span class="line">abc</span><br><span class="line"><span class="number">123456789</span></span><br><span class="line">输出</span><br><span class="line">abc00000</span><br><span class="line"><span class="number">12345678</span></span><br><span class="line"><span class="number">90000000</span></span><br></pre></td></tr></table></figure>
+<p>自己写的没通过的代码：  </p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">s = str(<span class="built_in">input</span>())</span><br><span class="line"><span class="keyword">k</span> = []</span><br><span class="line"><span class="keyword">if</span> <span class="built_in">len</span>(s) &lt; <span class="number">8</span>:</span><br><span class="line">    <span class="keyword">k</span>.<span class="keyword">append</span>(s + <span class="string">'0'</span> * (<span class="number">8</span> - <span class="built_in">len</span>(s)))</span><br><span class="line">elif <span class="built_in">len</span>(s)==<span class="number">8</span>:</span><br><span class="line">    <span class="keyword">k</span>.<span class="keyword">append</span>(s)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="keyword">k</span>.<span class="keyword">append</span>(s[<span class="number">0</span>:<span class="number">7</span>])</span><br><span class="line">    <span class="keyword">k</span>.<span class="keyword">append</span>(s[<span class="number">8</span>:]+ <span class="string">'0'</span> * (<span class="number">8</span> - <span class="built_in">len</span>(s[<span class="number">8</span>:])))</span><br><span class="line"><span class="keyword">for</span> i in <span class="keyword">k</span>:</span><br><span class="line">    <span class="keyword">print</span>(i)</span><br></pre></td></tr></table></figure>
+<p>网上的正确代码：  </p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">def pirnt8(<span class="built_in">line</span>):</span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">len</span>(<span class="built_in">line</span>) &lt; = <span class="number">8</span>:</span><br><span class="line">        <span class="keyword">print</span>(<span class="built_in">line</span>+<span class="string">"0"</span>*(<span class="number">8</span>-<span class="built_in">len</span>(<span class="built_in">line</span>)))</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">while</span> <span class="built_in">len</span>(<span class="built_in">line</span>) &gt; <span class="number">8</span>:</span><br><span class="line">            <span class="keyword">print</span>(<span class="built_in">line</span>[:<span class="number">8</span>])</span><br><span class="line">            <span class="built_in">line</span> = <span class="built_in">line</span>[<span class="number">8</span>:]</span><br><span class="line">        <span class="keyword">print</span>(<span class="built_in">line</span> + <span class="string">"0"</span>*(<span class="number">8</span>-<span class="built_in">len</span>(<span class="built_in">line</span>)))</span><br><span class="line"><span class="keyword">a</span> = <span class="built_in">input</span>()</span><br><span class="line"><span class="keyword">b</span> = <span class="built_in">input</span>()</span><br><span class="line">pirnt8(<span class="keyword">a</span>)</span><br><span class="line">pirnt8(<span class="keyword">b</span>)</span><br></pre></td></tr></table></figure>
+<p>分析：自己的思路和答案是一样的，而且都用到了关键的一步，就是右侧补零，<code>line+&quot;0&quot;*(8-len(line))</code>，自己的问题出在，题目没审清楚，说的是输入两次，所以我的框架就是错的，而且哪怕是输入一次也是错的，因为字符串的长度有可能是大于16的。  </p>
+<h4 id="zfill函数"><a href="#zfill函数" class="headerlink" title="zfill函数"></a>zfill函数</h4><p>在网上找末尾补零的时候，找到了这个函数，可以自动给字符串前面补零（zfill=zero fill的缩写）。  </p>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">n = <span class="string">"123"</span></span><br><span class="line">s = n.zfill(5)</span><br><span class="line">assert s == '00123'</span><br></pre></td></tr></table></figure>
+<h4 id="raw-input-和input-区别"><a href="#raw-input-和input-区别" class="headerlink" title="raw_input()和input()区别"></a>raw_input()和input()区别</h4><p>raw_input()只有python2.7版本可以用的，python3里面已经把raw_input()给去掉了，在 Python 3 内，将 raw_input() 重命名为 input()；  </p>
+<p>字符的时候可以用raw_input()，当然不怕麻烦也可以用input()手动加’’<br>int类型的时候最好用input().  </p>
+<h4 id="python装饰器"><a href="#python装饰器" class="headerlink" title="python装饰器"></a>python装饰器</h4><p>今天我看廖雪峰官方网站的时候，看到过这个，当时感觉没看懂，刚在洒哥哥博客看到，就搬运一下，好像和这道题没关系~~  </p>
+<p>装饰器本质上是一个Python函数，可以让其他函数在不需要做任何代码变动的前提下增加额外功能，装饰器的返回值也是一个函数对象，需求的场景：插入日志、性能测试、事务处理、缓存、权限校验。  </p>
+<p>例子：<br>比如写了很多个简单的函数，你想知道在运行的时候哪些函数在执行，只是想要很简单的在执行完毕之前给它打印一句“start”，应该是这样：  </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func_name</span><span class="params">(arg)</span>:</span></span><br><span class="line">    <span class="keyword">print</span> <span class="string">'Start func_name'</span></span><br><span class="line">    sentences</span><br></pre></td></tr></table></figure>
+<p>这样做是没有错，但是有想过没，难道想给每一个函数后面都加上那么一句吗？等运行完再一个个的删掉print不觉得麻烦吗？一个不麻烦，十个，一百个呢。  </p>
+<p>装饰器可以这么来：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">log</span><span class="params">(func)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">wrapper</span><span class="params">(*arg,**kw)</span>:</span></span><br><span class="line">        <span class="keyword">print</span> <span class="string">'Start %s'</span> % func</span><br><span class="line">        <span class="keyword">return</span> func(*arg,**kw)</span><br><span class="line">    <span class="keyword">return</span> wrapper</span><br><span class="line"><span class="meta">@log</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func_a</span><span class="params">(arg)</span>:</span></span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"><span class="meta">@log</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fun_b</span><span class="params">(arg)</span>:</span></span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"><span class="meta">@log</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fun_c</span><span class="params">(arg)</span>:</span></span><br><span class="line">    <span class="keyword">pass</span></span><br></pre></td></tr></table></figure></p>
+<p>其中，log函数就是装饰器，把装饰器写好后给需要装饰的函数前面加上@log就可以，装饰器节省了代码量，并且在函数不需要装饰的时候直接把@log去掉就可以，只需要用编辑器全局查找然后删除即可。  </p>
+<h3 id="进制转换"><a href="#进制转换" class="headerlink" title="进制转换"></a>进制转换</h3><figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">题目描述</span><br><span class="line">写出一个程序，接受一个十六进制的数值字符串，输出该数值的十进制字符串。（多组同时输入 ）</span><br><span class="line"></span><br><span class="line"><span class="section">输入描述:</span></span><br><span class="line">输入一个十六进制的数值字符串。</span><br><span class="line"></span><br><span class="line"><span class="section">输出描述:</span></span><br><span class="line">输出该数值的十进制字符串。</span><br><span class="line"></span><br><span class="line">示例1</span><br><span class="line">输入</span><br><span class="line">0xA</span><br><span class="line">输出</span><br><span class="line">10</span><br></pre></td></tr></table></figure>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> True:</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        <span class="keyword">print</span>(<span class="keyword">int</span>(<span class="built_in">input</span>(),<span class="number">16</span>))</span><br><span class="line">    excep<span class="variable">t:</span></span><br><span class="line">        <span class="keyword">break</span></span><br></pre></td></tr></table></figure>
+<p>注意：题中说多组输入，要用try不然不能通过.  </p>
+<h4 id="python间的进制转换"><a href="#python间的进制转换" class="headerlink" title="python间的进制转换"></a>python间的进制转换</h4><h5 id="任意进制-gt-十进制int"><a href="#任意进制-gt-十进制int" class="headerlink" title="任意进制-&gt;十进制int()"></a>任意进制-&gt;十进制int()</h5><p>可以将二进制，八进制，十六进制转换成十进制整型：<br><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;</span>&gt; int(<span class="string">'1111'</span>, <span class="number">2</span>)</span><br><span class="line"><span class="number">15</span></span><br><span class="line"><span class="meta">&gt;&gt;</span>&gt; int(<span class="string">'f'</span>, <span class="number">16</span>)</span><br><span class="line"><span class="number">15</span></span><br><span class="line"><span class="meta">&gt;&gt;</span>&gt; int(<span class="string">'17'</span>, <span class="number">8</span>)</span><br><span class="line"><span class="number">15</span></span><br></pre></td></tr></table></figure></p>
+<h5 id="整型–-gt-字符；chr"><a href="#整型–-gt-字符；chr" class="headerlink" title="整型–&gt;字符；chr()"></a>整型–&gt;字符；chr()</h5><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">chr</span><span class="params">(<span class="number">90</span>)</span></span></span><br><span class="line">输出:<span class="string">'Z'</span></span><br></pre></td></tr></table></figure>
+<h5 id="字符–-gt-整型-ord"><a href="#字符–-gt-整型-ord" class="headerlink" title="字符–&gt;整型:ord()"></a>字符–&gt;整型:ord()</h5><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">ord</span><span class="params">(<span class="string">'Z'</span>)</span></span></span><br><span class="line">输出：<span class="number">90</span></span><br></pre></td></tr></table></figure>
+<h5 id="十进制–-gt-十六进制-hex"><a href="#十进制–-gt-十六进制-hex" class="headerlink" title="十进制–&gt;十六进制:hex()"></a>十进制–&gt;十六进制:hex()</h5><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">hex</span><span class="params">(<span class="number">255</span>)</span></span></span><br><span class="line">输出：<span class="string">'0xff'</span></span><br></pre></td></tr></table></figure>
+<h5 id="十进制–-gt-二进制：bin"><a href="#十进制–-gt-二进制：bin" class="headerlink" title="十进制–&gt;二进制：bin()"></a>十进制–&gt;二进制：bin()</h5><figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">bin(<span class="number">255</span>)</span><br><span class="line">输出：'<span class="number">0b11111111</span>'</span><br></pre></td></tr></table></figure>
+<h3 id="质数因子"><a href="#质数因子" class="headerlink" title="质数因子"></a>质数因子</h3><figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">题目描述</span><br><span class="line">功能:输入一个正整数，按照从小到大的顺序输出它的所有质数的因子（如<span class="number">180</span>的质数因子为<span class="number">2</span> <span class="number">2</span> <span class="number">3</span> <span class="number">3</span> <span class="number">5</span> ）</span><br><span class="line">最后一个数后面也要有空格</span><br><span class="line"></span><br><span class="line">详细描述：</span><br><span class="line">函数接口说明：</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">String</span> <span class="built_in">getResult</span>(<span class="keyword">long</span> ulDataInput)</span><br><span class="line">输入参数：</span><br><span class="line"><span class="keyword">long</span> ulDataInput：输入的正整数</span><br><span class="line">返回值：</span><br><span class="line"><span class="keyword">String</span></span><br><span class="line"></span><br><span class="line">输入描述:</span><br><span class="line">输入一个<span class="keyword">long</span>型整数</span><br><span class="line"></span><br><span class="line">输出描述:</span><br><span class="line">按照从小到大的顺序输出它的所有质数的因子，以空格隔开。最后一个数后面也要有空格。</span><br><span class="line"></span><br><span class="line">示例<span class="number">1</span></span><br><span class="line">输入</span><br><span class="line"><span class="number">180</span></span><br><span class="line">输出</span><br><span class="line"><span class="number">2</span> <span class="number">2</span> <span class="number">3</span> <span class="number">3</span> <span class="number">5</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">a</span>,<span class="keyword">res</span>=<span class="keyword">int</span>(<span class="built_in">input</span>()),[]</span><br><span class="line"><span class="keyword">for</span> i in <span class="built_in">range</span>(<span class="number">2</span>,<span class="keyword">a</span>//<span class="number">2</span>+<span class="number">1</span>):</span><br><span class="line">    <span class="keyword">while</span> <span class="keyword">a</span>%i==<span class="number">0</span>:</span><br><span class="line">        <span class="keyword">a</span>=<span class="keyword">a</span>/i</span><br><span class="line">        <span class="keyword">res</span>.<span class="keyword">append</span>(i)</span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span>(<span class="string">" "</span>.<span class="keyword">join</span>(<span class="keyword">map</span>(str, <span class="keyword">res</span>)) + <span class="string">" "</span> <span class="keyword">if</span> <span class="keyword">res</span> <span class="keyword">else</span> str(<span class="keyword">a</span>) + <span class="string">" "</span>)</span><br></pre></td></tr></table></figure>
+<p>注意：输入的是整数，必须int(input())  </p>
+<h4 id="python算数运算符"><a href="#python算数运算符" class="headerlink" title="python算数运算符"></a>python算数运算符</h4><p>+加<br>-减<br>*乘<br>/除<br>%取模 - 求余<br>**幂，返回a的b次幂<br>//取整除 - 返回商的整数部分（向下取整）  </p>
+<figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; <span class="number">9</span><span class="comment">//2</span></span><br><span class="line"> <span class="number">4</span></span><br><span class="line">&gt;&gt;&gt; <span class="number">-9</span><span class="comment">//2</span></span><br><span class="line"><span class="number">-5</span></span><br></pre></td></tr></table></figure>
+<h3 id="取近似值"><a href="#取近似值" class="headerlink" title="取近似值"></a>取近似值</h3><figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">题目描述</span><br><span class="line">写出一个程序，接受一个正浮点数值，输出该数值的近似整数值。如果小数点后数值大于等于5,向上取整；小于5，则向下取整。</span><br><span class="line"></span><br><span class="line"><span class="section">输入描述:</span></span><br><span class="line">输入一个正浮点数值</span><br><span class="line"></span><br><span class="line"><span class="section">输出描述:</span></span><br><span class="line">输出该数值的近似整数值</span><br><span class="line"></span><br><span class="line">示例1</span><br><span class="line">输入</span><br><span class="line">5.5</span><br><span class="line">输出</span><br><span class="line">6</span><br></pre></td></tr></table></figure>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">a=<span class="keyword">float</span>(input())</span><br><span class="line"><span class="built_in">if</span> (a-<span class="keyword">int</span>(a))&gt;=<span class="number">0.5</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="keyword">int</span>(a)+<span class="number">1</span>)</span><br><span class="line"><span class="built_in">else</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="keyword">int</span>(a))</span><br></pre></td></tr></table></figure>
+<h3 id="合并表记录"><a href="#合并表记录" class="headerlink" title="合并表记录"></a>合并表记录</h3><figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">题目描述</span><br><span class="line">数据表记录包含表索引和数值，请对表索引相同的记录进行合并，即将相同索引的数值进行求和运算，输出按照key值升序进行输出。</span><br><span class="line"></span><br><span class="line">输入描述<span class="symbol">:</span></span><br><span class="line">先输入键值对的个数</span><br><span class="line">然后输入成对的<span class="built_in">index</span>和<span class="built_in">value</span>值，以空格隔开</span><br><span class="line"></span><br><span class="line">输出描述<span class="symbol">:</span></span><br><span class="line">输出合并后的键值对（多行）</span><br><span class="line"></span><br><span class="line">示例<span class="number">1</span></span><br><span class="line">输入</span><br><span class="line"><span class="number">4</span></span><br><span class="line"><span class="number">0</span> <span class="number">1</span></span><br><span class="line"><span class="number">0</span> <span class="number">2</span></span><br><span class="line"><span class="number">1</span> <span class="number">2</span></span><br><span class="line"><span class="number">3</span> <span class="number">4</span></span><br><span class="line">输出</span><br><span class="line"><span class="number">0</span> <span class="number">3</span></span><br><span class="line"><span class="number">1</span> <span class="number">2</span></span><br><span class="line"><span class="number">3</span> <span class="number">4</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> True:</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        <span class="keyword">res</span>=dict()</span><br><span class="line">        num=<span class="keyword">int</span>(<span class="built_in">input</span>())</span><br><span class="line">        <span class="keyword">for</span> i in <span class="built_in">range</span>(num):</span><br><span class="line">            dict_input=<span class="built_in">input</span>().<span class="keyword">split</span>()</span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">int</span>(dict_input[<span class="number">0</span>]) in re<span class="variable">s:</span></span><br><span class="line">                <span class="keyword">res</span>[<span class="keyword">int</span>(dict_input[<span class="number">0</span>])]+=<span class="keyword">int</span>(dict_input[<span class="number">1</span>])</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">res</span>[<span class="keyword">int</span>(dict_input[<span class="number">0</span>])]=<span class="keyword">int</span>(dict_input[<span class="number">1</span>])</span><br><span class="line">        res_list=sorted(<span class="keyword">res</span>)</span><br><span class="line">        <span class="keyword">for</span> i in res_lis<span class="variable">t:</span></span><br><span class="line">            <span class="keyword">print</span>(i,<span class="keyword">res</span>[<span class="keyword">int</span>(i)])</span><br><span class="line">    excep<span class="variable">t:</span></span><br><span class="line">        <span class="keyword">break</span></span><br></pre></td></tr></table></figure>
+<p>注意：.split()默认为所有的空字符，包括空格、换行(\n)、制表符(\t)等，此处如果写成.split(‘ ‘)就会不不通过，原因应该是输入的类型可能两个数字之间隔得是空字符，都有可能。  </p>
+<h4 id="使用collections-defaultdict类（了解内容）"><a href="#使用collections-defaultdict类（了解内容）" class="headerlink" title="使用collections.defaultdict类（了解内容）"></a>使用collections.defaultdict类（了解内容）</h4><p>defaultdict是Python内建dict类的一个子类，第一个参数为default_factory属性提供初始值，默认为None。它覆盖一个方法并添加一个可写实例变量。它的其他功能与dict相同，但会为一个不存在的键提供默认值，从而避免KeyError异常。之前例子的实现如下：  </p>
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; <span class="keyword">from</span> collections <span class="keyword">import</span> defaultdict</span><br><span class="line">&gt;&gt;&gt; <span class="keyword">count</span> = defaultdict(<span class="keyword">int</span>)</span><br><span class="line">&gt;&gt;&gt; <span class="keyword">for</span> fruit in bag:</span><br><span class="line">...     <span class="keyword">count</span>[fruit] += <span class="number">1</span></span><br><span class="line">...</span><br><span class="line">&gt;&gt;&gt; <span class="keyword">count</span></span><br><span class="line">defaultdict(&lt;<span class="keyword">class</span> <span class="string">'int'</span>&gt;, &#123;<span class="string">'apple'</span>: <span class="number">3</span>, <span class="string">'orange'</span>: <span class="number">1</span>, <span class="string">'cherry'</span>: <span class="number">2</span>, <span class="string">'blueberry'</span>: <span class="number">1</span>&#125;)</span><br></pre></td></tr></table></figure>
+<h3 id="提取不重复的整数"><a href="#提取不重复的整数" class="headerlink" title="提取不重复的整数"></a>提取不重复的整数</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">题目描述</span><br><span class="line">输入一个<span class="keyword">int</span>型整数，按照从右向左的阅读顺序，返回一个不含重复数字的新的整数。</span><br><span class="line"></span><br><span class="line">输入描述:</span><br><span class="line">输入一个<span class="keyword">int</span>型整数</span><br><span class="line"></span><br><span class="line">输出描述:</span><br><span class="line">按照从右向左的阅读顺序，返回一个不含重复数字的新的整数</span><br><span class="line"></span><br><span class="line">示例<span class="number">1</span></span><br><span class="line">输入</span><br><span class="line"><span class="number">9876673</span></span><br><span class="line">输出</span><br><span class="line"><span class="number">37689</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">result=<span class="string">""</span></span><br><span class="line"><span class="keyword">for</span> <span class="selector-tag">i</span> <span class="keyword">in</span> input()[::-<span class="number">1</span>]:</span><br><span class="line">    <span class="keyword">if</span> <span class="selector-tag">i</span> not <span class="keyword">in</span> result:</span><br><span class="line">        result+=i</span><br><span class="line"><span class="function"><span class="title">print</span><span class="params">(result)</span></span></span><br></pre></td></tr></table></figure>
+<p>注意：input()[::-1]是把输入取反  </p>
+<h4 id="sort和sorted"><a href="#sort和sorted" class="headerlink" title="sort和sorted"></a>sort和sorted</h4><p>对于一个无序的列表a，调用a.sort()，对a进行排序后返回a，sort()函数修改待排序的列表内容。    </p>
+<p>而对于同样一个无序的列表a，调用sorted(a)，对a进行排序后返回一个新的列表，而对a不产生影响。   </p>
+<h3 id="字符个数统计"><a href="#字符个数统计" class="headerlink" title="字符个数统计"></a>字符个数统计</h3><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">题目描述</span><br><span class="line">编写一个函数，计算字符串中含有的不同字符的个数。字符在<span class="selector-tag">ACSII</span>码范围内(<span class="number">0</span>~<span class="number">127</span>)。不在范围内的不作统计。</span><br><span class="line"></span><br><span class="line">输入描述:</span><br><span class="line">输入<span class="selector-tag">N</span>个字符，字符在<span class="selector-tag">ACSII</span>码范围内。</span><br><span class="line"></span><br><span class="line">输出描述:</span><br><span class="line">输出范围在(<span class="number">0</span>~<span class="number">127</span>)字符的个数。</span><br><span class="line"></span><br><span class="line">示例<span class="selector-tag">1</span></span><br><span class="line">输入</span><br><span class="line"><span class="selector-tag">abc</span></span><br><span class="line">输出</span><br><span class="line"><span class="selector-tag">3</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print (<span class="name">len</span>(<span class="name">set</span>([i for i in input() if ord(<span class="name">i</span>) in range(<span class="number">128</span>)])))</span><br></pre></td></tr></table></figure>
+<p>注意：不同字符！！！<br>这里面用到了列表生成器！！  </p>
+<h3 id="数字颠倒"><a href="#数字颠倒" class="headerlink" title="数字颠倒"></a>数字颠倒</h3><figure class="highlight dns"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">题目描述</span><br><span class="line">描述：</span><br><span class="line">输入一个整数，将这个整数以字符串的形式逆序输出</span><br><span class="line">程序不考虑负数的情况，若数字含有<span class="number">0</span>，则逆序形式也含有<span class="number">0</span>，如输入为<span class="number">100</span>，则输出为<span class="number">001</span></span><br><span class="line"></span><br><span class="line">输入描述:</span><br><span class="line">输入一个int整数</span><br><span class="line"></span><br><span class="line">输出描述:</span><br><span class="line">将这个整数以字符串的形式逆序输出</span><br><span class="line"></span><br><span class="line">示例<span class="number">1</span></span><br><span class="line">输入</span><br><span class="line"><span class="number">1516000</span></span><br><span class="line">输出</span><br><span class="line"><span class="number">0006151</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="name">input</span>()[:<span class="symbol">:-1</span>])</span><br></pre></td></tr></table></figure>
+<p>步长为-1，表示为可迭代对象进行反转!!  </p>
+<h3 id="字符串反转"><a href="#字符串反转" class="headerlink" title="字符串反转"></a>字符串反转</h3><figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">题目描述</span><br><span class="line">写出一个程序，接受一个字符串，然后输出该字符串反转后的字符串。例如：</span><br><span class="line"></span><br><span class="line"><span class="section">输入描述:</span></span><br><span class="line">输入N个字符</span><br><span class="line"></span><br><span class="line"><span class="section">输出描述:</span></span><br><span class="line">输出该字符串反转后的字符串</span><br><span class="line"></span><br><span class="line">示例1</span><br><span class="line">输入</span><br><span class="line">abcd</span><br><span class="line">输出</span><br><span class="line">dcba</span><br></pre></td></tr></table></figure>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="name">input</span>()[:<span class="symbol">:-1</span>])</span><br></pre></td></tr></table></figure>
+<h3 id="句子逆序"><a href="#句子逆序" class="headerlink" title="句子逆序"></a>句子逆序</h3><figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">题目描述</span><br><span class="line">将一个英文语句以单词为单位逆序排放。例如“I am a <span class="keyword">boy”，逆序排放后为“boy </span>a am I”</span><br><span class="line">所有单词之间用一个空格隔开，语句中除了英文字母外，不再包含其他字符</span><br><span class="line"></span><br><span class="line">接口说明</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 反转句子</span></span><br><span class="line"><span class="comment"> * </span></span><br><span class="line"><span class="comment"> * @param sentence 原句子</span></span><br><span class="line"><span class="comment"> * @return 反转后的句子</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="symbol">public</span> <span class="keyword">String </span><span class="keyword">reverse(String </span>sentence)<span class="comment">;</span></span><br><span class="line"></span><br><span class="line">输入描述:</span><br><span class="line">将一个英文语句以单词为单位逆序排放。</span><br><span class="line"></span><br><span class="line">输出描述:</span><br><span class="line">得到逆序的句子</span><br><span class="line"></span><br><span class="line">示例<span class="number">1</span></span><br><span class="line">输入</span><br><span class="line">I am a <span class="keyword">boy</span></span><br><span class="line"><span class="keyword">输出</span></span><br><span class="line"><span class="keyword">boy </span>a am I</span><br></pre></td></tr></table></figure>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(' '.join(<span class="name">input</span>().split()[:<span class="symbol">:-1</span>]))</span><br></pre></td></tr></table></figure>
+<p>分析：由split把句子拆分为几个字符串，然后又由[::-1]进行逆序，最后通过join在每个单词之间加空格。  </p>
+<h4 id="str-gt-gt-gt-list"><a href="#str-gt-gt-gt-list" class="headerlink" title="str &gt;&gt;&gt;list"></a>str &gt;&gt;&gt;list</h4><p><strong>.split()</strong><br><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">str1 = <span class="string">"12345"</span>  </span><br><span class="line">list1 = <span class="keyword">list</span>(str1)  </span><br><span class="line"><span class="keyword">print</span> list1  </span><br><span class="line">  </span><br><span class="line">str2 = <span class="string">"123 sjhid dhi"</span>  </span><br><span class="line">list2 = str2.<span class="keyword">split</span>() #or list2 = str2.<span class="keyword">split</span>(<span class="string">" "</span>)  </span><br><span class="line"><span class="keyword">print</span> list2  </span><br><span class="line">  </span><br><span class="line">str3 = <span class="string">"www.google.com"</span>  </span><br><span class="line">list3 = str3.<span class="keyword">split</span>(<span class="string">"."</span>)  </span><br><span class="line"><span class="keyword">print</span> list3  </span><br><span class="line">输出为：  </span><br><span class="line">[<span class="keyword">python</span>] <span class="keyword">view</span> plain <span class="keyword">copy</span></span><br><span class="line">[<span class="string">'1'</span>, <span class="string">'2'</span>, <span class="string">'3'</span>, <span class="string">'4'</span>, <span class="string">'5'</span>]  </span><br><span class="line">[<span class="string">'123'</span>, <span class="string">'sjhid'</span>, <span class="string">'dhi'</span>]  </span><br><span class="line">[<span class="string">'www'</span>, <span class="string">'google'</span>, <span class="string">'com'</span>]</span><br></pre></td></tr></table></figure></p>
+<h4 id="list-gt-gt-gt-str"><a href="#list-gt-gt-gt-str" class="headerlink" title="list &gt;&gt;&gt;str"></a>list &gt;&gt;&gt;str</h4><p><strong>‘’.join()</strong><br><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">str4 = <span class="string">""</span>.<span class="keyword">join</span>(list3)  </span><br><span class="line"><span class="keyword">print</span> str4  </span><br><span class="line">str5 = <span class="string">"."</span>.<span class="keyword">join</span>(list3)  </span><br><span class="line"><span class="keyword">print</span> str5  </span><br><span class="line">str6 = <span class="string">" "</span>.<span class="keyword">join</span>(list3)  </span><br><span class="line"><span class="keyword">print</span> str6  </span><br><span class="line">输出为：</span><br><span class="line">[<span class="keyword">python</span>] <span class="keyword">view</span> plain <span class="keyword">copy</span></span><br><span class="line">wwwgooglecom  </span><br><span class="line">www.google.<span class="keyword">com</span>  </span><br><span class="line">www google <span class="keyword">com</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="字串的连接最长路径查找"><a href="#字串的连接最长路径查找" class="headerlink" title="字串的连接最长路径查找"></a>字串的连接最长路径查找</h3><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">题目描述</span><br><span class="line">给定<span class="keyword">n</span>个字符串，请对<span class="keyword">n</span>个字符串按照字典序排列。</span><br><span class="line"></span><br><span class="line">输入描述:</span><br><span class="line">输入第一行为一个正整数<span class="keyword">n</span>(1≤<span class="keyword">n</span>≤1000),下面<span class="keyword">n</span>行为<span class="keyword">n</span>个字符串(字符串长度≤100),字符串中只含有大小写字母。</span><br><span class="line"></span><br><span class="line">输出描述:</span><br><span class="line">数据输出<span class="keyword">n</span>行，输出结果为按照字典序排列的字符串。</span><br><span class="line"></span><br><span class="line">示例1</span><br><span class="line">输入</span><br><span class="line">9</span><br><span class="line"><span class="keyword">cap</span></span><br><span class="line">to</span><br><span class="line"><span class="keyword">cat</span></span><br><span class="line">card</span><br><span class="line"><span class="keyword">two</span></span><br><span class="line">too</span><br><span class="line">up</span><br><span class="line">boat</span><br><span class="line"><span class="keyword">boot</span></span><br><span class="line">输出</span><br><span class="line">boat</span><br><span class="line"><span class="keyword">boot</span></span><br><span class="line"><span class="keyword">cap</span></span><br><span class="line">card</span><br><span class="line"><span class="keyword">cat</span></span><br><span class="line">to</span><br><span class="line">too</span><br><span class="line"><span class="keyword">two</span></span><br><span class="line">up</span><br></pre></td></tr></table></figure>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">a</span>=<span class="keyword">int</span>(<span class="built_in">input</span>())</span><br><span class="line"><span class="built_in">string</span>=[]</span><br><span class="line"><span class="keyword">for</span> i in <span class="built_in">range</span>(<span class="keyword">a</span>):</span><br><span class="line">    <span class="built_in">string</span>.<span class="keyword">append</span>(<span class="built_in">input</span>())</span><br><span class="line"><span class="keyword">for</span> str in sorted(<span class="built_in">string</span>):</span><br><span class="line">    <span class="keyword">print</span>(str)</span><br></pre></td></tr></table></figure>
+<h3 id="求int型正整数在内存中存储时1的个数"><a href="#求int型正整数在内存中存储时1的个数" class="headerlink" title="求int型正整数在内存中存储时1的个数"></a>求int型正整数在内存中存储时1的个数</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">题目描述</span><br><span class="line">输入一个<span class="keyword">int</span>型的正整数，计算出该<span class="keyword">int</span>型数据在内存中存储时<span class="number">1</span>的个数。</span><br><span class="line"></span><br><span class="line">输入描述:</span><br><span class="line"> 输入一个整数（<span class="keyword">int</span>类型）</span><br><span class="line"></span><br><span class="line">输出描述:</span><br><span class="line"> 这个数转换成<span class="number">2</span>进制后，输出<span class="number">1</span>的个数</span><br><span class="line"></span><br><span class="line">示例<span class="number">1</span></span><br><span class="line">输入</span><br><span class="line"><span class="number">5</span></span><br><span class="line">输出</span><br><span class="line"><span class="number">2</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="name">str</span>(<span class="name">bin</span>(<span class="name">int</span>(<span class="name">input</span>()))).count(<span class="string">"1"</span>))</span><br></pre></td></tr></table></figure>
+<h4 id="count-方法"><a href="#count-方法" class="headerlink" title="count()方法"></a>count()方法</h4><p>count() 方法用于统计字符串里某个字符出现的次数。  </p>
+<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">str.count(sub, <span class="built_in">start</span>= <span class="number">0</span>,<span class="keyword">end</span>=<span class="built_in">len</span>(<span class="keyword">string</span>))</span><br></pre></td></tr></table></figure>
+<blockquote>
+<ul>
+<li>sub – 搜索的子字符串</li>
+<li>start – 字符串开始搜索的位置。默认为第一个字符,第一个字符索引值为0。</li>
+<li>end – 字符串中结束搜索的位置。字符中第一个字符的索引为 0。默认为字符串的最后一个位置。</li>
+</ul>
+</blockquote>
+<h4 id="Python-质数判断"><a href="#Python-质数判断" class="headerlink" title="Python 质数判断"></a>Python 质数判断</h4><p>一个大于1的自然数，除了1和它本身外，不能被其他自然数（质数）整除（2, 3, 5, 7等），换句话说就是该数除了1和它本身以外不再有其他的因数。  </p>
+<figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"># Python 程序用于检测用户输入的数字是否为质数</span><br><span class="line"> </span><br><span class="line"># 用户输入数字</span><br><span class="line"><span class="built_in">num</span> = int(input(<span class="string">"请输入一个数字: "</span>))</span><br><span class="line"> </span><br><span class="line"># 质数大于 <span class="number">1</span></span><br><span class="line"><span class="keyword">if</span> <span class="built_in">num</span> &gt; <span class="number">1</span>:</span><br><span class="line">   # 查看因子</span><br><span class="line">   <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">2</span>,<span class="built_in">num</span>):</span><br><span class="line">       <span class="keyword">if</span> (<span class="built_in">num</span> <span class="symbol">%</span> i) == <span class="number">0</span>:</span><br><span class="line">           <span class="built_in">print</span>(<span class="built_in">num</span>,<span class="string">"不是质数"</span>)</span><br><span class="line">           <span class="built_in">print</span>(i,<span class="string">"乘于"</span>,<span class="built_in">num</span>//i,<span class="string">"是"</span>,<span class="built_in">num</span>)</span><br><span class="line">           <span class="built_in">break</span></span><br><span class="line">   <span class="keyword">else</span>:</span><br><span class="line">       <span class="built_in">print</span>(<span class="built_in">num</span>,<span class="string">"是质数"</span>)</span><br><span class="line">       </span><br><span class="line"># 如果输入的数字小于或等于 <span class="number">1</span>，不是质数</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">   <span class="built_in">print</span>(<span class="built_in">num</span>,<span class="string">"不是质数"</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="背包问题"><a href="#背包问题" class="headerlink" title="背包问题"></a>背包问题</h3><p><a href="https://zhuanlan.zhihu.com/p/30959069" target="_blank" rel="noopener">参考1</a><br><a href="https://blog.csdn.net/superzzx0920/article/details/72178544" target="_blank" rel="noopener">参考2</a>  </p>
+<p>最经典的背包问题可以描述为：  </p>
+<blockquote>
+<p>有n个物品，每个物品的重量为w[i]，每个物品的价值为v[i]。现在有一个背包，它所能容纳的重量为W，问：当你面对这么多有价值的物品时，你的背包所能带走的最大价值是多少？  </p>
+</blockquote>
+<p>思路：每个物品无非是装入背包或者不装入背包，那么就一个一个物品陆续放入背包中。  </p>
+<p>我们用c[i][w]表示处理到第i 个物品时背包容量为w下所能装下的最大价值。关键的状态转移方程如下：  </p>
+<p><img src="https://upload-images.jianshu.io/upload_images/13740218-df6512833c1912d8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br><img src="https://upload-images.jianshu.io/upload_images/13740218-f0f8a3daf9088da6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<h3 id="购物单-（有点小问题！！）"><a href="#购物单-（有点小问题！！）" class="headerlink" title="购物单 （有点小问题！！）"></a>购物单 （有点小问题！！）</h3><figure class="highlight tap"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">题目描述</span><br><span class="line">王强今天很开心，公司发给N元的年终奖。王强决定把年终奖用于购物，他把想买的物品分为两类：主件与附件，附件是从属于某个主件的，下表就是一些主件与附件的例子：</span><br><span class="line"></span><br><span class="line">主件  附件</span><br><span class="line">电脑  打印机，扫描仪</span><br><span class="line">书柜  图书</span><br><span class="line">书桌  台灯，文具</span><br><span class="line">工作椅 无</span><br><span class="line"></span><br><span class="line">如果要买归类为附件的物品，必须先买该附件所属的主件。每个主件可以有<span class="number"> 0 </span>个、<span class="number"> 1 </span>个或<span class="number"> 2 </span>个附件。附件不再有从属于自己的附件。王强想买的东西很多，为了不超出预算，他把每件物品规定了一个重要度，分为<span class="number"> 5 </span>等：用整数<span class="number"> 1 </span>~<span class="number"> 5 </span>表示，第5等最重要。他还从因特网上查到了每件物品的价格（都是<span class="number"> 10 </span>元的整数倍）。他希望在不超过 N 元（可以等于 N 元）的前提下，使每件物品的价格与重要度的乘积的总和最大。</span><br><span class="line"></span><br><span class="line">设第 j 件物品的价格为 v[j] ，重要度为 w[j] ，共选中了 k 件物品，编号依次为 j<span class="number"> 1 </span>， j<span class="number"> 2 </span>，……， j k ，则所求的总和为：</span><br><span class="line">v[j<span class="number"> 1 </span>]*w[j<span class="number"> 1 </span>]+v[j<span class="number"> 2 </span>]*w[j<span class="number"> 2 </span>]+ … +v[j k ]*w[j k ] 。（其中 * 为乘号）</span><br><span class="line">    </span><br><span class="line">请你帮助王强设计一个满足要求的购物单。</span><br><span class="line"></span><br><span class="line">输入描述:</span><br><span class="line">输入的第<span class="number"> 1 </span>行，为两个正整数，用一个空格隔开：N m</span><br><span class="line">（其中 N （ &lt;32000 ）表示总钱数， m （ &lt;60 ）为希望购买物品的个数。）</span><br><span class="line"></span><br><span class="line">从第2行到第 m+1 行，第 j 行给出了编号为 j-1 的物品的基本数据，每行有<span class="number"> 3 </span>个非负整数 v p q（其中 v 表示该物品的价格（ v&lt;10000 ）， p 表示该物品的重要度（<span class="number"> 1 </span>~<span class="number"> 5 </span>）， q 表示该物品是主件还是附件。如果 q=0 ，表示该物品为主件，如果 q&gt;0 ，表示该物品为附件， q 是所属主件的编号）</span><br><span class="line"> </span><br><span class="line">输出描述:</span><br><span class="line"> 输出文件只有一个正整数，为不超过总钱数的物品的价格与重要度乘积的总和的最大值（ &lt;200000 ）。</span><br><span class="line"></span><br><span class="line">示例1</span><br><span class="line">输入</span><br><span class="line">1000 5</span><br><span class="line">800<span class="number"> 2 </span>0</span><br><span class="line">400<span class="number"> 5 </span>1</span><br><span class="line">300<span class="number"> 5 </span>1</span><br><span class="line">400<span class="number"> 3 </span>0</span><br><span class="line">500<span class="number"> 2 </span>0</span><br><span class="line">输出</span><br><span class="line">2200</span><br></pre></td></tr></table></figure>
+<figure class="highlight inform7"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">n,m = map(int,input().split())</span><br><span class="line">prices = <span class="comment">[0]</span>*m</span><br><span class="line">degree = <span class="comment">[0]</span>*m</span><br><span class="line">depend = <span class="comment">[0]</span>*m            #在这里记录的主件下标是从1开始的</span><br><span class="line"> </span><br><span class="line">for i in range(m):</span><br><span class="line">    prices<span class="comment">[i]</span>,degree<span class="comment">[i]</span>,depend<span class="comment">[i]</span> = map(int,input().split())</span><br><span class="line">result = <span class="comment">[<span class="comment">[0]</span>*(n+1) for i in range(m+1)]</span></span><br><span class="line"> </span><br><span class="line">for i in range(1,m+1):            #选择商品</span><br><span class="line">    for j in range(10,n+1,10):    #价格（10的整数）</span><br><span class="line">        if depend<span class="comment">[i-1]</span> == 0:      #如果为主件</span><br><span class="line">            if prices<span class="comment">[i-1]</span> &lt;= j:                 </span><br><span class="line">                result<span class="comment">[i]</span><span class="comment">[j]</span> = max(result<span class="comment">[i-1]</span><span class="comment">[j]</span>,result<span class="comment">[i-1]</span><span class="comment">[j-prices<span class="comment">[i-1]</span>]</span> + prices<span class="comment">[i-1]</span>*degree<span class="comment">[i-1]</span>)</span><br><span class="line">        elif prices<span class="comment">[i-1]</span> + prices<span class="comment">[depend<span class="comment">[i-1]</span>-1]</span> &lt;= j: #如果为配件，钱比配件大；然后比较加与不加谁大（空出主件＋该配件的钱，然后加上主件和配件与重要度的乘积）</span><br><span class="line">            result<span class="comment">[i]</span><span class="comment">[j]</span> = max(result<span class="comment">[i-1]</span><span class="comment">[j]</span>,result<span class="comment">[i-1]</span><span class="comment">[j-prices<span class="comment">[i-1]</span>-prices<span class="comment">[depend<span class="comment">[i-1]</span>-1]</span>]</span> + prices<span class="comment">[i-1]</span>*degree<span class="comment">[i-1]</span>+prices<span class="comment">[depend<span class="comment">[i-1]</span>-1]</span>*degree<span class="comment">[depend<span class="comment">[i-1]</span>-1]</span>)</span><br><span class="line">print(result<span class="comment">[m]</span><span class="comment">[int(n/10)*10]</span>)     #n可能非10的倍数</span><br></pre></td></tr></table></figure>
+<p>注意：<br>① 对于<code>prices = [0]*m</code>，提前定好prices这个list的大小，后面就可以直接赋值，如果不这样写，写成’prices=[]’也可以，不过后面就得用append();  </p>
+<p>②  ‘result = [[0]<em>(n+1) for i in range(m+1)]’，相当于生成m+1个[0]</em>(n+1)这样的零列表，也就是生成[m+1,n+1]这样的零矩阵，result表示的是最后要输出的值（物品的价格与重要度的乘积）；其中，result[1][10]开始取值的；  </p>
+<p>③ i和j分别表示商品和价格的遍历，这两个for循环位置可以换；它们两个只要固定一个，判断另一个就好，比如：固定i，表示固定了这一件商品，先判断主件还是附件，在判断能不能买得起，买得<br>起的情况下，买和不买哪一个的result大，这样的流程依次遍历；  </p>
+<p>④ 如果是附件，他的处理方式是：必须要买主件才能买附件，所以，如果买，则要减去主件和附件的prices，并加上主件和附件的result值；  </p>
+<p>⑤应该注意的一点是：此时的i和j表示的就是当前的商品和价格，但是prices、depend、degree这三个数组是从0开始的，所以标号为i-1；  </p>
+<p>⑥如果为附件时，<code>prices[i-1]</code>表示的是当前附件的价格，<code>prices[depend[i-1]-1]</code>表示的是附件对应主件的价格，<code>depend[i-1]</code>表示当前附件所对应的主件的编号，因为prices从0开始，因此要减一。  </p>
+<h3 id="坐标移动"><a href="#坐标移动" class="headerlink" title="坐标移动"></a>坐标移动</h3><figure class="highlight subunit"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">题目描述</span><br><span class="line">开发一个坐标计算工具， A表示向左移动，D表示向右移动，W表示向上移动，S表示向下移动。从（0,0）点开始移动，从输入字符串里面读取一些坐标，并将最终输入结果输出到输出文件里面。</span><br><span class="line">输入：</span><br><span class="line">合法坐标为A(或者D或者W或者S) + 数字（两位以内）坐标之间以;分隔。</span><br><span class="line">非法坐标点需要进行丢弃。如AA10;  A1A;  $%$;  YAD; 等。</span><br><span class="line"></span><br><span class="line">下面是一个简单的例子 如：</span><br><span class="line">A10;S20;W10;D30;X;A1A;B10A11;;A10;</span><br><span class="line">处理过程：</span><br><span class="line">起点（0,0）+ A10 = （<span class="string">-10</span>,0）</span><br><span class="line">+   S20   =  (<span class="string">-10</span>,<span class="string">-20</span>)</span><br><span class="line">+   W10  =  (<span class="string">-10</span>,<span class="string">-10</span>)</span><br><span class="line">+   D30  =  (20,<span class="string">-10</span>)</span><br><span class="line">+   x    =  无效</span><br><span class="line">+   A1A   =  无效</span><br><span class="line">+   B10A11   =  无效</span><br><span class="line">+  一个空 不影响</span><br><span class="line">+   A10  =  (10,<span class="string">-10</span>)</span><br><span class="line"> </span><br><span class="line">结果 （10， <span class="string">-10</span>）</span><br><span class="line"></span><br><span class="line">输入描述:</span><br><span class="line">一行字符串</span><br><span class="line"></span><br><span class="line">输出描述:</span><br><span class="line">最终坐标，以,分隔</span><br><span class="line"></span><br><span class="line">示例1</span><br><span class="line">输入</span><br><span class="line">A10;S20;W10;D30;X;A1A;B10A11;;A10;</span><br><span class="line">输出</span><br><span class="line">10,<span class="string">-10</span></span><br></pre></td></tr></table></figure>
+<p>代码：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">check</span><span class="params">(string)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> string == <span class="string">''</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">False</span></span><br><span class="line">    t = list(string)</span><br><span class="line">    start = t.pop(<span class="number">0</span>)</span><br><span class="line">    <span class="keyword">if</span> start <span class="keyword">in</span> [<span class="string">'A'</span>, <span class="string">'W'</span>, <span class="string">'D'</span>, <span class="string">'S'</span>] <span class="keyword">and</span> <span class="string">''</span>.join(t).isdigit():</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">True</span></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">False</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">doA</span><span class="params">(a, init=[<span class="number">0</span>, <span class="number">0</span>])</span>:</span></span><br><span class="line">    init[<span class="number">0</span>] -= a</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">doD</span><span class="params">(d, init=[<span class="number">0</span>, <span class="number">0</span>])</span>:</span></span><br><span class="line">    init[<span class="number">0</span>] += d</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">doW</span><span class="params">(w, init=[<span class="number">0</span>, <span class="number">0</span>])</span>:</span></span><br><span class="line">    init[<span class="number">1</span>] += w</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">doS</span><span class="params">(s, init=[<span class="number">0</span>, <span class="number">0</span>])</span>:</span></span><br><span class="line">    init[<span class="number">1</span>] -= s</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> <span class="keyword">True</span>:</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        init = [<span class="number">0</span>, <span class="number">0</span>]</span><br><span class="line">        res = list()</span><br><span class="line">        strings = input().strip(<span class="string">';'</span>).split(<span class="string">';'</span>)</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> strings:</span><br><span class="line">            <span class="keyword">if</span> check(i):</span><br><span class="line">                res.append(i)</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> res:</span><br><span class="line">            i = list(i)</span><br><span class="line">            x = i.pop(<span class="number">0</span>)</span><br><span class="line">            i = int(<span class="string">''</span>.join(i))</span><br><span class="line">            <span class="keyword">if</span> x == <span class="string">'A'</span>:</span><br><span class="line">                doA(i, init)</span><br><span class="line">            <span class="keyword">elif</span> x == <span class="string">'D'</span>:</span><br><span class="line">                doD(i, init)</span><br><span class="line">            <span class="keyword">elif</span> x == <span class="string">'W'</span>:</span><br><span class="line">                doW(i, init)</span><br><span class="line">            <span class="keyword">elif</span> x == <span class="string">'S'</span>:</span><br><span class="line">                doS(i, init)</span><br><span class="line"></span><br><span class="line">        print(<span class="string">'&#123;0&#125;,&#123;1&#125;'</span>.format(init[<span class="number">0</span>], init[<span class="number">1</span>]))</span><br><span class="line">    <span class="keyword">except</span>:</span><br><span class="line">        <span class="keyword">break</span></span><br></pre></td></tr></table></figure></p>
+<p>注意：pop（0）方法后，列表中的元素就不包含这一项了，相当于被弹出了；<br>init[0]表示横坐标, init[1]表示纵坐标；  </p>
+<h4 id="list-pop-方法"><a href="#list-pop-方法" class="headerlink" title="list pop()方法"></a>list pop()方法</h4><p>pop() 函数用于移除列表中的一个元素（默认最后一个元素），并且返回该元素的值。<br>语法：<br><code>list.pop([index=-1])</code><br>参数：<br>obj – 可选参数，要移除列表元素的索引值，不能超过列表总长度，默认为 index=-1，删除最后一个列表值。</p>
+<p>代码中用的是i=i.pop(0)，表示返回第一个元素，例如：i=[‘A’,’1’,’0’],返回的是A;  </p>
+<h4 id="isalnum-方法"><a href="#isalnum-方法" class="headerlink" title="isalnum()方法"></a>isalnum()方法</h4><p>Python isalnum() 方法检测字符串是否由字母和数字组成.<br>语法：<code>str.isalnum()</code><br>返回值：<br>如果 string 至少有一个字符并且所有字符都是字母或数字则返回 True,否则返回 False.</p>
+<h4 id="isdigit-方法"><a href="#isdigit-方法" class="headerlink" title="isdigit()方法"></a>isdigit()方法</h4><p>Python isdigit() 方法检测字符串是否只由数字组成。<br>语法：<code>str.isdigit()</code><br>返回值：如果字符串只包含数字则返回 True 否则返回 False。  </p>
+<h4 id="strip-方法"><a href="#strip-方法" class="headerlink" title="strip()方法"></a>strip()方法</h4><p>例如：s为字符串，rm为要删除的字符序列  </p>
+<p>s.strip(rm)        删除s字符串中开头、结尾处，位于 rm删除序列的字符</p>
+<p>s.lstrip(rm)       删除s字符串中开头处，位于 rm删除序列的字符</p>
+<p>s.rstrip(rm)      删除s字符串中结尾处，位于 rm删除序列的字符</p>
+<p>注意：</p>
+<ol>
+<li>当rm为空时，默认删除空白符（包括’\n’, ‘\r’,  ‘\t’,  ‘ ‘)  </li>
+<li>这里的rm删除序列是只要边（开头或结尾）上的字符在删除序列内，就删除掉。  </li>
+<li>只有在两边才能删除！！！！  </li>
+</ol>
+<h4 id="list"><a href="#list" class="headerlink" title="list"></a>list</h4><p><img src="https://upload-images.jianshu.io/upload_images/13740218-6e5ee647ebd24480.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">  </p>
+<p>注意：split（）方法是对字符串进行分割，返回的是一个list，而且默认为所有的空字符，包括空格、换行(\n)、制表符(\t)等。  </p>
+<h4 id="format-格式化函数"><a href="#format-格式化函数" class="headerlink" title="format ()格式化函数"></a>format ()格式化函数</h4><p>基本语法是通过 {} 和 : 来代替以前的 % 。<br>format 函数可以接受不限个参数，位置可以不按顺序。  </p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;</span>&gt;<span class="string">"&#123;&#125; &#123;&#125;"</span>.format(<span class="string">"hello"</span>, <span class="string">"world"</span>)    <span class="comment"># 不设置指定位置，按默认顺序</span></span><br><span class="line"><span class="string">'hello world'</span></span><br><span class="line"> </span><br><span class="line"><span class="meta">&gt;&gt;</span>&gt; <span class="string">"&#123;0&#125; &#123;1&#125;"</span>.format(<span class="string">"hello"</span>, <span class="string">"world"</span>)  <span class="comment"># 设置指定位置</span></span><br><span class="line"><span class="string">'hello world'</span></span><br><span class="line"> </span><br><span class="line"><span class="meta">&gt;&gt;</span>&gt; <span class="string">"&#123;1&#125; &#123;0&#125; &#123;1&#125;"</span>.format(<span class="string">"hello"</span>, <span class="string">"world"</span>)  <span class="comment"># 设置指定位置</span></span><br><span class="line"><span class="string">'world hello world'</span></span><br></pre></td></tr></table></figure>
+<p>数字格式化方法<br><a href="http://www.runoob.com/python/att-string-format.html" target="_blank" rel="noopener">详细介绍</a>  </p>
+<h3 id="识别有效的IP地址和掩码并进行分类统计"><a href="#识别有效的IP地址和掩码并进行分类统计" class="headerlink" title="识别有效的IP地址和掩码并进行分类统计"></a>识别有效的IP地址和掩码并进行分类统计</h3><figure class="highlight x86asm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">题目描述</span><br><span class="line">请解析<span class="built_in">IP</span>地址和对应的掩码，进行分类识别。要求按照A/B/C/D/E类地址归类，不合法的地址和掩码单独归类。</span><br><span class="line"></span><br><span class="line">所有的<span class="built_in">IP</span>地址划分为 A,B,C,D,E五类</span><br><span class="line"></span><br><span class="line">A类地址<span class="number">1.0</span><span class="meta">.0</span><span class="meta">.0</span>~<span class="number">126.255</span><span class="meta">.255</span><span class="meta">.255</span><span class="comment">;</span></span><br><span class="line"></span><br><span class="line">B类地址<span class="number">128.0</span><span class="meta">.0</span><span class="meta">.0</span>~<span class="number">191.255</span><span class="meta">.255</span><span class="meta">.255</span><span class="comment">;</span></span><br><span class="line"></span><br><span class="line">C类地址<span class="number">192.0</span><span class="meta">.0</span><span class="meta">.0</span>~<span class="number">223.255</span><span class="meta">.255</span><span class="meta">.255</span><span class="comment">;</span></span><br><span class="line"></span><br><span class="line">D类地址<span class="number">224.0</span><span class="meta">.0</span><span class="meta">.0</span>~<span class="number">239.255</span><span class="meta">.255</span><span class="meta">.255</span>；</span><br><span class="line"></span><br><span class="line">E类地址<span class="number">240.0</span><span class="meta">.0</span><span class="meta">.0</span>~<span class="number">255.255</span><span class="meta">.255</span><span class="meta">.255</span></span><br><span class="line"></span><br><span class="line">私网<span class="built_in">IP</span>范围是：</span><br><span class="line"></span><br><span class="line"><span class="number">10.0</span><span class="meta">.0</span><span class="meta">.0</span>～<span class="number">10.255</span><span class="meta">.255</span><span class="meta">.255</span></span><br><span class="line"></span><br><span class="line"><span class="number">172.16</span><span class="meta">.0</span><span class="meta">.0</span>～<span class="number">172.31</span><span class="meta">.255</span><span class="meta">.255</span></span><br><span class="line"></span><br><span class="line"><span class="number">192.168</span><span class="meta">.0</span><span class="meta">.0</span>～<span class="number">192.168</span><span class="meta">.255</span><span class="meta">.255</span></span><br><span class="line"></span><br><span class="line">子网掩码为前面是连续的<span class="number">1</span>，然后全是<span class="number">0</span>。（例如：<span class="number">255.255</span><span class="meta">.255</span><span class="meta">.32</span>就是一个非法的掩码）</span><br><span class="line">本题暂时默认以<span class="number">0</span>开头的<span class="built_in">IP</span>地址是合法的，比如<span class="number">0.1</span><span class="meta">.1</span><span class="meta">.2</span>，是合法地址</span><br><span class="line"></span><br><span class="line">输入描述:</span><br><span class="line">多行字符串。每行一个<span class="built_in">IP</span>地址和掩码，用~隔开。</span><br><span class="line"></span><br><span class="line">输出描述:</span><br><span class="line">统计A、B、C、D、E、错误<span class="built_in">IP</span>地址或错误掩码、私有<span class="built_in">IP</span>的个数，之间以空格隔开。</span><br><span class="line"></span><br><span class="line">示例<span class="number">1</span></span><br><span class="line">输入</span><br><span class="line"><span class="number">10.70</span><span class="meta">.44</span><span class="meta">.68</span>~<span class="number">255.254</span><span class="meta">.255</span><span class="meta">.0</span></span><br><span class="line"><span class="number">1.0</span><span class="meta">.0</span><span class="meta">.1</span>~<span class="number">255.0</span><span class="meta">.0</span><span class="meta">.0</span></span><br><span class="line"><span class="number">192.168</span><span class="meta">.0</span><span class="meta">.2</span>~<span class="number">255.255</span><span class="meta">.255</span><span class="meta">.0</span></span><br><span class="line"><span class="number">19</span>..<span class="number">0</span>.~<span class="number">255.255</span><span class="meta">.255</span><span class="meta">.0</span></span><br><span class="line">输出</span><br><span class="line"><span class="number">1</span> <span class="number">0</span> <span class="number">1</span> <span class="number">0</span> <span class="number">0</span> <span class="number">2</span> <span class="number">1</span></span><br></pre></td></tr></table></figure>
+<p>该程序通过率60%：将（ # IP合法的前提下计数）这一块内容中的条件判断写全就100%通过了（还是没想通，先这样记住吧）；  </p>
+<p>分析：是因为当a=127时，不应该等于B类，如果不写全，会判错；<br>if…elif的判断是从上到下的，满足一个条件后，就不会再判断其他的条件了。  </p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line">A, B, C, D, E, F, G = <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span></span><br><span class="line"><span class="keyword">res</span> = <span class="keyword">list</span>()</span><br><span class="line"><span class="keyword">while</span> True:</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        inputs = <span class="built_in">input</span>()</span><br><span class="line">        <span class="keyword">if</span> inputs <span class="keyword">is</span> <span class="string">''</span>:</span><br><span class="line">            # <span class="keyword">print</span>(<span class="string">'&#123;A&#125; &#123;B&#125; &#123;C&#125; &#123;D&#125; &#123;E&#125; &#123;F&#125;'</span>.format(**locals()))</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">        [IP, MASK] = inputs.<span class="keyword">split</span>(<span class="string">'~'</span>)</span><br><span class="line">        <span class="keyword">res</span>.<span class="keyword">append</span>([IP, MASK])</span><br><span class="line">    excep<span class="variable">t:</span></span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> [ip, mask] in re<span class="variable">s:</span></span><br><span class="line">    ip = ip.<span class="keyword">split</span>(<span class="string">'.'</span>)</span><br><span class="line">    mask = mask.<span class="keyword">split</span>(<span class="string">'.'</span>)</span><br><span class="line">    # IP错误</span><br><span class="line">    <span class="keyword">if</span> <span class="string">''</span> in ip:</span><br><span class="line">        F += <span class="number">1</span></span><br><span class="line">        <span class="keyword">continue</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">a</span> = <span class="keyword">int</span>(ip[<span class="number">0</span>])</span><br><span class="line">        <span class="keyword">b</span> = <span class="keyword">int</span>(ip[<span class="number">1</span>])</span><br><span class="line">        <span class="keyword">c</span> = <span class="keyword">int</span>(ip[<span class="number">2</span>])</span><br><span class="line">        d = <span class="keyword">int</span>(ip[<span class="number">3</span>])</span><br><span class="line">        <span class="keyword">if</span> not (<span class="number">0</span> &lt;= <span class="keyword">a</span> &lt;= <span class="number">255</span> <span class="built_in">and</span> <span class="number">0</span> &lt;= <span class="keyword">b</span> &lt;= <span class="number">255</span> <span class="built_in">and</span> <span class="number">0</span> &lt;= <span class="keyword">c</span> &lt;= <span class="number">255</span> <span class="built_in">and</span> <span class="number">0</span> &lt;= d &lt;= <span class="number">255</span>):</span><br><span class="line">            F += <span class="number">1</span></span><br><span class="line">            <span class="keyword">continue</span></span><br><span class="line">        elif (<span class="keyword">a</span>, <span class="keyword">b</span>, <span class="keyword">c</span>, d) == (<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>) <span class="built_in">or</span> (<span class="keyword">a</span>, <span class="keyword">b</span>, <span class="keyword">c</span>, d) == (<span class="number">255</span>, <span class="number">255</span>, <span class="number">255</span>, <span class="number">255</span>):</span><br><span class="line">            F += <span class="number">1</span></span><br><span class="line">            <span class="keyword">continue</span></span><br><span class="line">        elif <span class="keyword">a</span> == <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">continue</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            # 掩码错误</span><br><span class="line">            <span class="keyword">if</span> <span class="string">''</span> in mask <span class="built_in">or</span> mask == [<span class="string">'255'</span>, <span class="string">'255'</span>, <span class="string">'255'</span>, <span class="string">'255'</span>]:</span><br><span class="line">                F += <span class="number">1</span></span><br><span class="line">                <span class="keyword">continue</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                tmp = <span class="keyword">list</span>()</span><br><span class="line">                <span class="keyword">for</span> i in mask:</span><br><span class="line">                    i = bin(<span class="keyword">int</span>(i)).lstrip(<span class="string">'0b'</span>) <span class="built_in">or</span> <span class="string">'0'</span></span><br><span class="line">                    <span class="keyword">if</span> <span class="built_in">len</span>(i) != <span class="number">8</span>:</span><br><span class="line">                        i = <span class="string">'0'</span>*(<span class="number">8</span> - <span class="built_in">len</span>(i)) + i</span><br><span class="line">                    tmp.<span class="keyword">append</span>(i)</span><br><span class="line">                # mask = tmp</span><br><span class="line">                <span class="keyword">if</span> <span class="string">'01'</span> in <span class="string">''</span>.<span class="keyword">join</span>(tmp):</span><br><span class="line">                    F += <span class="number">1</span></span><br><span class="line">                    <span class="keyword">continue</span></span><br><span class="line">        # IP合法的前提下计数</span><br><span class="line">        <span class="keyword">if</span> <span class="number">1</span> &lt;= <span class="keyword">a</span> &lt;= <span class="number">126</span>:</span><br><span class="line">            A += <span class="number">1</span></span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">a</span> == <span class="number">10</span>:</span><br><span class="line">                G += <span class="number">1</span></span><br><span class="line">        elif <span class="number">128</span> &lt;= <span class="keyword">a</span> &lt;= <span class="number">191</span>:</span><br><span class="line">            B += <span class="number">1</span></span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">a</span> == <span class="number">172</span> <span class="built_in">and</span> <span class="number">16</span> &lt;= <span class="keyword">b</span> &lt;= <span class="number">31</span>:</span><br><span class="line">                G += <span class="number">1</span></span><br><span class="line">        elif <span class="number">192</span>&lt;=<span class="keyword">a</span> &lt;= <span class="number">223</span>:</span><br><span class="line">            C += <span class="number">1</span></span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">a</span> == <span class="number">192</span> <span class="built_in">and</span> <span class="keyword">b</span> == <span class="number">168</span>:</span><br><span class="line">                G += <span class="number">1</span></span><br><span class="line">        elif <span class="number">224</span>&lt;=<span class="keyword">a</span> &lt;= <span class="number">239</span>:</span><br><span class="line">            D += <span class="number">1</span></span><br><span class="line">        elif <span class="number">240</span>&lt;=<span class="keyword">a</span>&lt;=<span class="number">255</span>:</span><br><span class="line">            E += <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span>(<span class="string">'&#123;A&#125; &#123;B&#125; &#123;C&#125; &#123;D&#125; &#123;E&#125; &#123;F&#125; &#123;G&#125;'</span>.format(**locals()))</span><br></pre></td></tr></table></figure>
+<h4 id="locals-函数"><a href="#locals-函数" class="headerlink" title="locals() 函数"></a>locals() 函数</h4><p>locals() 函数会以字典类型返回当前位置的全部局部变量。<br>对于函数, 方法, lambda 函式, 类, 以及实现了 <strong>call</strong> 方法的类实例, 它都返回 True。  </p>
+<p>语法 : locals()<br>返回值 : 返回字典类型的局部变量。  </p>
+<p>实例：<br><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;</span>&gt;<span class="function"><span class="keyword">def</span> <span class="title">runoob</span><span class="params">(arg)</span></span>:    <span class="comment"># 两个局部变量：arg、z</span></span><br><span class="line">...     z = <span class="number">1</span></span><br><span class="line">...     print (locals())</span><br><span class="line">... </span><br><span class="line"><span class="meta">&gt;&gt;</span>&gt; runoob(<span class="number">4</span>)</span><br><span class="line">&#123;<span class="string">'z'</span>: <span class="number">1</span>, <span class="string">'arg'</span>: <span class="number">4</span>&#125;      <span class="comment"># 返回一个名字/值对的字典</span></span><br><span class="line"><span class="meta">&gt;&gt;</span>&gt;</span><br></pre></td></tr></table></figure></p>
+<h4 id="format-locals"><a href="#format-locals" class="headerlink" title=".format(**locals())"></a>.format(**locals())</h4><p>利用 locals() 函数结合 string 对象的format方法可以用于高效创建格式化字符串，例如：<br><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">def <span class="function"><span class="title">fun</span><span class="params">(a, b)</span></span>:</span><br><span class="line">  x = <span class="number">20</span></span><br><span class="line">  y = <span class="number">30</span></span><br><span class="line">  sum = x + y</span><br><span class="line">  prod = x * y</span><br><span class="line">  formatStr = <span class="string">'&#123;x&#125; + &#123;y&#125; = &#123;sum&#125;; &#123;x&#125; * &#123;y&#125; = &#123;prod&#125;.'</span></span><br><span class="line">  print(formatStr.format(**locals()))</span><br><span class="line"></span><br><span class="line"># print: <span class="string">'20 + 30 = 50; 20 * 30 = 600.'</span></span><br></pre></td></tr></table></figure></p>
+<p>**locals() 将根据 formatStr 中位于括号内的变量名实现映射解包操作。  </p>
+<h4 id="bin-函数"><a href="#bin-函数" class="headerlink" title="bin()函数"></a>bin()函数</h4><p>bin() 返回一个整数 int 或者长整数 long int 的二进制表示。<br>注意：返回的是一个字符串；  </p>
+<p>例如：<br><figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt;bin(<span class="number">10</span>)</span><br><span class="line">'<span class="number">0b1010</span>'</span><br><span class="line">&gt;&gt;&gt; bin(<span class="number">20</span>)</span><br><span class="line">'<span class="number">0b10100</span>'</span><br></pre></td></tr></table></figure></p>
+<h3 id="简单错误记录"><a href="#简单错误记录" class="headerlink" title="简单错误记录"></a>简单错误记录</h3><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">题目描述</span><br><span class="line">开发一个简单错误记录功能小模块，能够记录出错的代码所在的文件名称和行号。</span><br><span class="line"></span><br><span class="line">处理： </span><br><span class="line"><span class="number">1</span>、 记录最多<span class="number">8</span>条错误记录，循环记录，对相同的错误记录（净文件名称和行号完全匹配）只记录一条，错误计数增加；</span><br><span class="line"><span class="number">2</span>、 超过<span class="number">16</span>个字符的文件名称，只记录文件的最后有效<span class="number">16</span>个字符；</span><br><span class="line"><span class="number">3</span>、 输入的文件可能带路径，记录文件名称不能带路径。</span><br><span class="line"></span><br><span class="line">输入描述:</span><br><span class="line">一行或多行字符串。每行包括带路径文件名称，行号，以空格隔开。</span><br><span class="line"></span><br><span class="line">输出描述:</span><br><span class="line">将所有的记录统计并将结果输出，格式：文件名 代码行数 数目，一个空格隔开，如：</span><br><span class="line"></span><br><span class="line">示例<span class="number">1</span></span><br><span class="line">输入</span><br><span class="line">E:\V1R2\product\fpgadrive<span class="selector-class">.c</span>   <span class="number">1325</span></span><br><span class="line">输出</span><br><span class="line">fpgadrive<span class="selector-class">.c</span> <span class="number">1325</span> <span class="number">1</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">res</span> = dict()</span><br><span class="line">f_res = <span class="keyword">list</span>()</span><br><span class="line"><span class="keyword">while</span> True:</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        strings = <span class="built_in">input</span>()</span><br><span class="line">        <span class="keyword">if</span> strings == <span class="string">''</span> <span class="built_in">or</span> strings == <span class="string">'\n'</span>:</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">        [fpath, <span class="built_in">line</span>] = strings.<span class="keyword">split</span>(<span class="string">' '</span>)</span><br><span class="line">        fname = fpath.<span class="keyword">split</span>(<span class="string">'\\'</span>)[-<span class="number">1</span>]</span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">len</span>(fname) &gt; <span class="number">16</span>:</span><br><span class="line">            fname = fname[-<span class="number">16</span>:]</span><br><span class="line">        fnames = fname + <span class="string">' '</span> + <span class="built_in">line</span></span><br><span class="line">        <span class="keyword">if</span> fnames in re<span class="variable">s:</span></span><br><span class="line">            <span class="keyword">res</span>[fnames] += <span class="number">1</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">res</span>[fnames] = <span class="number">1</span></span><br><span class="line">            f_res.<span class="keyword">append</span>(fnames)</span><br><span class="line"></span><br><span class="line">    excep<span class="variable">t:</span></span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i in f_res[-<span class="number">8</span>:]:</span><br><span class="line">    <span class="keyword">print</span>(<span class="string">'&#123;0&#125; &#123;1&#125;'</span>.format(i, <span class="keyword">res</span>[i]))</span><br></pre></td></tr></table></figure>
+<p>注意：要加try…except，否则会不通过。<br>注意：其中的res=dict()，定义了一个空的字典（用来存储key-value），目的是用来计算这种错误出现的次数的。  </p>
+<h4 id="python转义字符"><a href="#python转义字符" class="headerlink" title="python转义字符"></a>python转义字符</h4><figure class="highlight livescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">\</span>   (在行尾时) 续行符</span><br><span class="line"><span class="string">\\</span>  反斜杠符号</span><br><span class="line"><span class="string">\'</span>  单引号</span><br><span class="line"><span class="string">\"</span>  双引号</span><br></pre></td></tr></table></figure>
+<p>### </p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/python/" rel="tag"># python</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/11/25/Python爬虫入门-weoffer/" rel="next" title="Python爬虫入门-weoffer">
+                <i class="fa fa-chevron-left"></i> Python爬虫入门-weoffer
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">刘莹</p>
+              <p class="site-description motion-element" itemprop="description">生活要有仪式感</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-globe"></i>
+                推荐阅读
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://x-nicolo.github.io/" title="肖洒" target="_blank">肖洒</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000" title="廖雪峰python学习" target="_blank">廖雪峰python学习</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.w3school.com.cn/html/index.asp" title="W3school" target="_blank">W3school</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.nowcoder.com/" title="牛客网" target="_blank">牛客网</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.runoob.com/" title="菜鸟教程" target="_blank">菜鸟教程</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#华为机试在线测试"><span class="nav-number">1.</span> <span class="nav-text">华为机试在线测试</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#字符串最后一个单词的长度"><span class="nav-number">1.1.</span> <span class="nav-text">字符串最后一个单词的长度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#计算字符个数"><span class="nav-number">1.2.</span> <span class="nav-text">计算字符个数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#lower"><span class="nav-number">1.2.1.</span> <span class="nav-text">lower()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#count"><span class="nav-number">1.2.2.</span> <span class="nav-text">count()</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#明明的随机数"><span class="nav-number">1.3.</span> <span class="nav-text">明明的随机数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#sort和sorted的区别"><span class="nav-number">1.3.1.</span> <span class="nav-text">sort和sorted的区别</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字符串分隔"><span class="nav-number">1.4.</span> <span class="nav-text">字符串分隔</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#zfill函数"><span class="nav-number">1.4.1.</span> <span class="nav-text">zfill函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#raw-input-和input-区别"><span class="nav-number">1.4.2.</span> <span class="nav-text">raw_input()和input()区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#python装饰器"><span class="nav-number">1.4.3.</span> <span class="nav-text">python装饰器</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#进制转换"><span class="nav-number">1.5.</span> <span class="nav-text">进制转换</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#python间的进制转换"><span class="nav-number">1.5.1.</span> <span class="nav-text">python间的进制转换</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#任意进制-gt-十进制int"><span class="nav-number">1.5.1.1.</span> <span class="nav-text">任意进制-&gt;十进制int()</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#整型–-gt-字符；chr"><span class="nav-number">1.5.1.2.</span> <span class="nav-text">整型–&gt;字符；chr()</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#字符–-gt-整型-ord"><span class="nav-number">1.5.1.3.</span> <span class="nav-text">字符–&gt;整型:ord()</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#十进制–-gt-十六进制-hex"><span class="nav-number">1.5.1.4.</span> <span class="nav-text">十进制–&gt;十六进制:hex()</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#十进制–-gt-二进制：bin"><span class="nav-number">1.5.1.5.</span> <span class="nav-text">十进制–&gt;二进制：bin()</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#质数因子"><span class="nav-number">1.6.</span> <span class="nav-text">质数因子</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#python算数运算符"><span class="nav-number">1.6.1.</span> <span class="nav-text">python算数运算符</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#取近似值"><span class="nav-number">1.7.</span> <span class="nav-text">取近似值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#合并表记录"><span class="nav-number">1.8.</span> <span class="nav-text">合并表记录</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#使用collections-defaultdict类（了解内容）"><span class="nav-number">1.8.1.</span> <span class="nav-text">使用collections.defaultdict类（了解内容）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#提取不重复的整数"><span class="nav-number">1.9.</span> <span class="nav-text">提取不重复的整数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#sort和sorted"><span class="nav-number">1.9.1.</span> <span class="nav-text">sort和sorted</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字符个数统计"><span class="nav-number">1.10.</span> <span class="nav-text">字符个数统计</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数字颠倒"><span class="nav-number">1.11.</span> <span class="nav-text">数字颠倒</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字符串反转"><span class="nav-number">1.12.</span> <span class="nav-text">字符串反转</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#句子逆序"><span class="nav-number">1.13.</span> <span class="nav-text">句子逆序</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#str-gt-gt-gt-list"><span class="nav-number">1.13.1.</span> <span class="nav-text">str &gt;&gt;&gt;list</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#list-gt-gt-gt-str"><span class="nav-number">1.13.2.</span> <span class="nav-text">list &gt;&gt;&gt;str</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字串的连接最长路径查找"><span class="nav-number">1.14.</span> <span class="nav-text">字串的连接最长路径查找</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#求int型正整数在内存中存储时1的个数"><span class="nav-number">1.15.</span> <span class="nav-text">求int型正整数在内存中存储时1的个数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#count-方法"><span class="nav-number">1.15.1.</span> <span class="nav-text">count()方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Python-质数判断"><span class="nav-number">1.15.2.</span> <span class="nav-text">Python 质数判断</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#背包问题"><span class="nav-number">1.16.</span> <span class="nav-text">背包问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#购物单-（有点小问题！！）"><span class="nav-number">1.17.</span> <span class="nav-text">购物单 （有点小问题！！）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#坐标移动"><span class="nav-number">1.18.</span> <span class="nav-text">坐标移动</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#list-pop-方法"><span class="nav-number">1.18.1.</span> <span class="nav-text">list pop()方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#isalnum-方法"><span class="nav-number">1.18.2.</span> <span class="nav-text">isalnum()方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#isdigit-方法"><span class="nav-number">1.18.3.</span> <span class="nav-text">isdigit()方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#strip-方法"><span class="nav-number">1.18.4.</span> <span class="nav-text">strip()方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#list"><span class="nav-number">1.18.5.</span> <span class="nav-text">list</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#format-格式化函数"><span class="nav-number">1.18.6.</span> <span class="nav-text">format ()格式化函数</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#识别有效的IP地址和掩码并进行分类统计"><span class="nav-number">1.19.</span> <span class="nav-text">识别有效的IP地址和掩码并进行分类统计</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#locals-函数"><span class="nav-number">1.19.1.</span> <span class="nav-text">locals() 函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#format-locals"><span class="nav-number">1.19.2.</span> <span class="nav-text">.format(**locals())</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#bin-函数"><span class="nav-number">1.19.3.</span> <span class="nav-text">bin()函数</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#简单错误记录"><span class="nav-number">1.20.</span> <span class="nav-text">简单错误记录</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#python转义字符"><span class="nav-number">1.20.1.</span> <span class="nav-text">python转义字符</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">刘莹</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
