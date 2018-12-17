@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="title: 西电教务处爬虫系统date: 2018-12-17 11:25:25tags: [python] categories: 爬虫西电教务处爬虫系统应该是爬虫的最后一个项目了~后续会多学习Java的相关知识~">
+<meta property="og:type" content="article">
+<meta property="og:title" content="小可爱">
+<meta property="og:url" content="https://liuying0111.github.io/2018/12/17/西电教务处爬虫系统/index.html">
+<meta property="og:site_name" content="小可爱">
+<meta property="og:description" content="title: 西电教务处爬虫系统date: 2018-12-17 11:25:25tags: [python] categories: 爬虫西电教务处爬虫系统应该是爬虫的最后一个项目了~后续会多学习Java的相关知识~">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/13740218-257d84acf1799747.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/13740218-f814571e22f76a0f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2018-12-17T03:28:56.477Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="小可爱">
+<meta name="twitter:description" content="title: 西电教务处爬虫系统date: 2018-12-17 11:25:25tags: [python] categories: 爬虫西电教务处爬虫系统应该是爬虫的最后一个项目了~后续会多学习Java的相关知识~">
+<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/13740218-257d84acf1799747.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://liuying0111.github.io/2018/12/17/西电教务处爬虫系统/"/>
+
+
+
+
+
+  <title> | 小可爱</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">小可爱</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">生活要有仪式感</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://liuying0111.github.io/2018/12/17/西电教务处爬虫系统/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="刘莹">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小可爱">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline"></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-17T11:25:25+08:00">
+                2018-12-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <hr>
+<p>title: 西电教务处爬虫系统<br>date: 2018-12-17 11:25:25<br>tags: [python]</p>
+<h2 id="categories-爬虫"><a href="#categories-爬虫" class="headerlink" title="categories: 爬虫"></a>categories: 爬虫</h2><p>西电教务处爬虫系统<br>应该是爬虫的最后一个项目了~<br>后续会多学习Java的相关知识~  </p>
+<a id="more"></a>  
+<h3 id="抓包工具Fiddler"><a href="#抓包工具Fiddler" class="headerlink" title="抓包工具Fiddler"></a>抓包工具Fiddler</h3><p>内容参考自<a href="https://www.cnblogs.com/hong-fithing/p/7582947.html" target="_blank" rel="noopener">Fiddler</a>  </p>
+<p>Fiddler 是以代理web服务器的形式工作的，它使用代理地址:127.0.0.1，端口:8888。  </p>
+<p>当Fiddler退出的时候它会自动注销， 这样就不会影响别的程序。不过如果Fiddler非正常退出，这时候因为Fiddler没有自动注销，会造成网页无法访问。 解决的办法是重新启动下Fiddler。  </p>
+<p>个人理解：fiddler是一个抓包工具，当浏览器访问服务器会形成一个请求，此时，fiddler就处于请求之间，当浏览器发送请求，会先经过fiddler，然后在到服务器；当服务器有返回数据给浏览器显示时，也会先经过fiddler，然后数据才到浏览器中显示，这样一个过程，fiddler就抓取到了请求和响应的整个过程。  </p>
+<h4 id="Fiddler抓包解析"><a href="#Fiddler抓包解析" class="headerlink" title="Fiddler抓包解析"></a>Fiddler抓包解析</h4><p>使用fiddler抓包后，会出现如下会话框：  </p>
+<p><img src="https://upload-images.jianshu.io/upload_images/13740218-257d84acf1799747.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>抓包工具面板功能  </p>
+<figure class="highlight vbnet"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># :HTTP Request的顺序，从1开始，按照页面加载请求的顺序递增。</span></span><br><span class="line">Result : HTTP响应的状态 Protocol：请求使用的协议（如HTTP/HTTPS）</span><br><span class="line">HOST：请求地址的域名 URL：请求的服务器路径和文件名，也包含<span class="keyword">GET</span>参数</span><br><span class="line">BODY：请求的大小，以<span class="built_in">byte</span>为单位 </span><br><span class="line">Content-Type：请求响应的类型</span><br><span class="line">Caching：请求的缓存过期时间或缓存控制header的值</span><br><span class="line">Process：发出此请求的Windows进程及进程ID</span><br><span class="line">Comments ：用户通过脚本或者菜单给此session增加的备注</span><br><span class="line"><span class="keyword">custom</span>：用户可以通过脚本设置的自定义值</span><br></pre></td></tr></table></figure>
+<p>fiddler右边面板介绍  </p>
+<p><img src="https://upload-images.jianshu.io/upload_images/13740218-f814571e22f76a0f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">  </p>
+<p>Statistics页签  </p>
+<p>通过该页签， 用户可以通过选择多个会话来得来这几个会话的总的信息统计，比如多个请求和传输的字节数。选择第一个请求和最后一个请求， 可获得整个页面加载所消耗的总体时间。从条形图表中还可以分别出哪些请求耗时最多， 从而对页面的访问进行访问速度优化。  </p>
+<p>inspectors页签  </p>
+<p>它提供headers、textview、hexview,Raw等多种方式查看单条http请求的请求报文的信息，它分为上下两部分：上部分为HTTP Request（请求）展示，下部分为HTTPResponse（响应）展示。  </p>
+<p>AutoResponse页签  </p>
+<p>Fiddler最实用的功能， 它可以抓取在线页面保存到本地进行调试， 大大减少了在线调试的困难， 可以让我们修改服务器端返回的数据， 例如让返回都是HTTP404或者读取本地文件作为返回内容。  </p>
+<p>composer页签  </p>
+<p>支持手动构建和发送HTTP， HTTPS和FTP请求， 我们还可以从web session列表中拖曳session， 把它放到composer选项卡中， 当我们点击Execute按钮， 把请求发送到服务器端。  </p>
+<p>log页签<br>打印日志  </p>
+<p>Filters页签  </p>
+<p>过滤器可以对左侧的数据流列表进行过滤， 我们可以标记、 修改或隐藏某些特征的数据流。  </p>
+<p>Timeline页签  </p>
+<p>时间轴，也称为Fiddler的瀑布图，展示网络请求时间的功能。 每个网络请求都会经历域名解析、建立连接、发送请求、接受数据等阶段。把多个请求以时间作为 X 轴， 用图表的形式展现出来， 就形成了瀑布图。 在左侧会话窗口点击一个或多个（同时按下 Ctrl 键），Timeline 便会显示指定内容从服务端传输到客户端的时间。  </p>
+<h3 id="爬取教务处学生信息student-py"><a href="#爬取教务处学生信息student-py" class="headerlink" title="爬取教务处学生信息student.py"></a>爬取教务处学生信息student.py</h3><p><a href="http://docs.python-requests.org/zh_CN/latest/user/quickstart.html" target="_blank" rel="noopener">requests的基本用法</a>  </p>
+<p><a href="http://docs.python-requests.org/zh_CN/latest/user/advanced.html" target="_blank" rel="noopener">requests的高级特性</a>  </p>
+<h4 id="登陆页面的url"><a href="#登陆页面的url" class="headerlink" title="登陆页面的url"></a>登陆页面的url</h4><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">XDspiderStudent</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(<span class="keyword">self</span>, auth_url=None, log_url=None)</span></span><span class="symbol">:</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> <span class="symbol">auth_url:</span></span><br><span class="line">            <span class="comment"># 登录界面 post</span></span><br><span class="line">            <span class="keyword">self</span>.auth_url = <span class="string">"http://ids.xidian.edu.cn/authserver/login?service=http%3A%2F%2Fjwxt.xidian.edu.cn%2Fcaslogin.jsp"</span></span><br><span class="line">            <span class="keyword">self</span>.log_url = <span class="string">"http://jwxt.xidian.edu.cn/caslogin.jsp"</span></span><br><span class="line">        <span class="symbol">else:</span></span><br><span class="line">            <span class="keyword">self</span>.auth_url = auth_url</span><br><span class="line">            <span class="keyword">self</span>.log_url = log_url</span><br><span class="line">        <span class="keyword">self</span>.session = requests.Session()</span><br></pre></td></tr></table></figure>
+<p>其中，<code>def __init__</code>定义类的时候，若是添加<strong>init</strong>方法，那么在创建类的实例的时候，实例会自动调用这个方法，一般用来对实例的属性进行初使化。  </p>
+<p><code>self.auth_url</code>是指教务处的登陆页面；  </p>
+<p><code>self.log_url</code>是指登陆进去之后的页面。  </p>
+<p>注：不可以直接将登陆进去之后页面的URL复制过来，因为会自动跳转到登录页。  </p>
+<p>这一部分内容完成的就是简单的准备工作。  </p>
+<h4 id="模拟登陆"><a href="#模拟登陆" class="headerlink" title="模拟登陆"></a>模拟登陆</h4><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">login</span><span class="params">(<span class="keyword">self</span>, id=<span class="string">''</span>, password=<span class="string">''</span>)</span></span><span class="symbol">:</span></span><br><span class="line">    r = <span class="keyword">self</span>.session.get(<span class="keyword">self</span>.auth_url)</span><br><span class="line">    data = r.text</span><br><span class="line">    bsObj = BeautifulSoup(data, <span class="string">"html.parser"</span>)</span><br><span class="line">    <span class="comment"># 登录所需信息</span></span><br><span class="line">    lt_value = bsObj.find(attrs=&#123;<span class="string">"name"</span>: <span class="string">"lt"</span>&#125;)[<span class="string">'value'</span>]</span><br><span class="line">    exe_value = bsObj.find(attrs=&#123;<span class="string">"name"</span>: <span class="string">"execution"</span>&#125;)[<span class="string">'value'</span>]</span><br><span class="line">    params = &#123;<span class="string">'username'</span>: id, <span class="string">'password'</span>: password,</span><br><span class="line">              <span class="string">"submit"</span>: <span class="string">""</span>, <span class="string">"lt"</span>: lt_value, <span class="string">"execution"</span>: exe_value,</span><br><span class="line">              <span class="string">"_eventId"</span>: <span class="string">"submit"</span>, <span class="string">"rmShown"</span>: <span class="string">'1'</span>&#125;</span><br><span class="line">    <span class="comment"># 模拟登录报头</span></span><br><span class="line">    headers = &#123;<span class="string">'User-Agent'</span>: <span class="string">"Mozilla/5.0 (Windows NT 10.0; WOW64; rv:44.0) Gecko/20100101 Firefox/44.0"</span>,</span><br><span class="line">               <span class="string">'Accept'</span>: <span class="string">"text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"</span>,</span><br><span class="line">               <span class="string">"Accept-Language"</span>: <span class="string">"zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3"</span>,</span><br><span class="line">               <span class="string">"Accept-Encoding"</span>: <span class="string">"gzip, deflate"</span>,</span><br><span class="line">               <span class="string">"Referer"</span>: <span class="string">"http://ids.xidian.edu.cn/authserver/login?service=http%3A%2F%2Fjwxt.xidian.edu.cn%2Fcaslogin.jsp"</span>,</span><br><span class="line">               <span class="string">"Content-Type"</span>: <span class="string">"application/x-www-form-urlencoded"</span>&#125;</span><br><span class="line">    s = <span class="keyword">self</span>.session.post(<span class="keyword">self</span>.auth_url, data=params, headers=headers)</span><br><span class="line">    s = <span class="keyword">self</span>.session.get(<span class="keyword">self</span>.log_url)</span><br></pre></td></tr></table></figure>
+<h5 id="self-session-get（）"><a href="#self-session-get（）" class="headerlink" title="self.session.get（）"></a>self.session.get（）</h5><p>该程序中，id是指学生的学号，password是指密码，<code>r = self.session.get(self.auth_url)</code> 访问登陆页面并返回所有的信息。  </p>
+<p>在我的pycharm中我打印了r的值，返回的是<br><figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">r:</span><span class="params">&lt;Response [<span class="number">200</span>]&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>返回的是网页的状态码，HTTP状态码表示HTTP协议所返回的响应状态。  </p>
+<p>HTTP状态码有5种，所有状态码的第一个数字代表了响应的5种状态之一：(1)消息：1XX；(2)成功：2XX;(3)重定向：3XX;(4)请求错误：4XX;(5)服务器错误：5XX.  </p>
+<p>目前常用的就两种：  </p>
+<p>(1)200：请求成功，请求所希望的响应头或者数据体随此响应返回。  </p>
+<p>(2)404：Not Found，请求失败，表示请求的资源未被在服务器上发现。整个状态可能是暂时的，也可能是永久的。所以，要做好该状态下的处理。  </p>
+<p>requests.session.get()  </p>
+<p>任何时候进行了类似 requests.get()的调用，你都在做两件主要的事情。   </p>
+<p>其一，你在构建一个 Request 对象，该对象将被发送到某个服务器请求或查询一些资源。  </p>
+<p>其二，一旦 requests 得到一个从服务器返回的响应就会产生一个 Response 对象。该响应对象包含服务器返回的所有信息，也包含你原来创建的 Request 对象。  </p>
+<p>如下是一个简单的请求，从 Wikipedia 的服务器得到一些非常重要的信息：  </p>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">r</span> = requests.get(<span class="string">'http://en.wikipedia.org/wiki/Monty_Python'</span>)</span><br></pre></td></tr></table></figure>
+<h5 id="r-text"><a href="#r-text" class="headerlink" title="r.text()"></a>r.text()</h5><p><strong>python requests的content和text方法的区别</strong>  </p>
+<blockquote>
+<p>r.text返回的是Unicode型的数据。<br>r.content返回的是bytes型也就是二进制的数据。  </p>
+</blockquote>
+<blockquote>
+<p>如果你想取文本，可以通过r.text。<br>如果想取图片，文件，则可以通过r.content。  </p>
+</blockquote>
+<h5 id="登陆所需信息"><a href="#登陆所需信息" class="headerlink" title="登陆所需信息"></a>登陆所需信息</h5><p>bsObj中打印出来的就是登陆页面的html代码，部分代码如下：  </p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;input <span class="attribute">type</span>=<span class="string">"hidden"</span> <span class="attribute">name</span>=<span class="string">"lt"</span> <span class="attribute">value</span>=<span class="string">"LT-703494-JsNeSdd0HmvPjCaGgxJZeBbqmtmQzt1544973307956-zozW-cas"</span> /&gt;</span><br><span class="line">                       &lt;input <span class="attribute">type</span>=<span class="string">"hidden"</span> <span class="attribute">name</span>=<span class="string">"execution"</span> <span class="attribute">value</span>=<span class="string">"e1s1"</span> /&gt;</span><br><span class="line">                       &lt;input <span class="attribute">type</span>=<span class="string">"hidden"</span> <span class="attribute">name</span>=<span class="string">"_eventId"</span> <span class="attribute">value</span>=<span class="string">"submit"</span> /&gt;</span><br><span class="line">                       &lt;input <span class="attribute">type</span>=<span class="string">"hidden"</span> <span class="attribute">name</span>=<span class="string">"rmShown"</span> <span class="attribute">value</span>=<span class="string">"1"</span>&gt;</span><br></pre></td></tr></table></figure>
+<p>params中存放我们登陆所需的信息。  </p>
+<h5 id="模拟登陆报头"><a href="#模拟登陆报头" class="headerlink" title="模拟登陆报头"></a>模拟登陆报头</h5><p>hearders中的内容是在Fiddler中获得的，其内容是试出来的。  </p>
+<h4 id="保存为CSV文件"><a href="#保存为CSV文件" class="headerlink" title="保存为CSV文件"></a>保存为CSV文件</h4><p><a href="https://blog.csdn.net/u012162613/article/details/41915859" target="_blank" rel="noopener">CSV模块的使用</a>  </p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">Store</span><span class="params">(<span class="keyword">self</span>)</span></span><span class="symbol">:</span></span><br><span class="line">       grade_page = <span class="keyword">self</span>.session.get(</span><br><span class="line">           <span class="string">"http://yjsxt.xidian.edu.cn/student/index.jsp"</span>)</span><br><span class="line">       bsObj = BeautifulSoup(grade_page.text, <span class="string">"html.parser"</span>)</span><br><span class="line"></span><br><span class="line">       table = bsObj.findAll(<span class="string">"table"</span>, &#123;<span class="string">"class"</span>: <span class="string">"tab"</span>&#125;)[<span class="number">0</span>]</span><br><span class="line">       rows = table.findAll(<span class="string">"tr"</span>)</span><br><span class="line"></span><br><span class="line">       csvFile = open(<span class="string">'./student.csv'</span>, <span class="string">'w'</span>, newline=<span class="string">''</span>, encoding=<span class="string">'utf-8'</span>)</span><br><span class="line">       writer = csv.writer(csvFile)</span><br><span class="line">       writer.writerow((<span class="string">'姓名'</span>, <span class="string">'学号'</span>, <span class="string">'培养单位'</span>, <span class="string">'入学年月'</span>, <span class="string">'录取方式'</span>,</span><br><span class="line">                        <span class="string">'专业'</span>, <span class="string">'研究方向'</span>, <span class="string">'导师'</span>, <span class="string">'已完成总学分'</span>, <span class="string">'学位课加权平均分'</span>))</span><br><span class="line">       csvRow = []</span><br><span class="line"></span><br><span class="line">       <span class="comment">#</span></span><br><span class="line">       <span class="symbol">try:</span></span><br><span class="line">           <span class="keyword">for</span> row <span class="keyword">in</span> <span class="symbol">rows:</span></span><br><span class="line">               <span class="keyword">for</span> cell <span class="keyword">in</span> row.findAll(<span class="string">'td'</span>)<span class="symbol">:</span></span><br><span class="line">                   csvRow.append(cell.get_text().strip().rstrip(<span class="string">'给导师发消息'</span>))</span><br><span class="line">           writer.writerow(csvRow)</span><br><span class="line">       <span class="symbol">finally:</span></span><br><span class="line">           csvFile.close()</span><br></pre></td></tr></table></figure>
+<p><code>&quot;http://yjsxt.xidian.edu.cn/student/index.jsp&quot;</code>这个是学生信息页面的URL；<br>后续的处理就是HTML代码处理，提取出所需的信息。  </p>
+<p>CSV (Comma Separated Values)，即逗号分隔值（也称字符分隔值，因为分隔符可以不是逗号），是一种常用的文本<br>格式，用以存储表格数据，包括数字或者字符。  </p>
+<p>‘w’表示写模式。  </p>
+<p>首先open()函数打开当前路径下的名字为’./student.csv’的文件，如果不存在这个文件，则创建它，返回csvFile文件对象。  </p>
+<p>csv.writer(csvFile)返回writer对象writer。  </p>
+<p>writerow()方法是一行一行写入，writerows方法是一次写入多行。  </p>
+<p>注意：如果文件’./student.csv’事先存在，调用writer函数会先清空原文件中的文本，再执行writerow/writerows方法。  </p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/12/10/华为机试题目/" rel="next" title="华为机试题目">
+                <i class="fa fa-chevron-left"></i> 华为机试题目
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">刘莹</p>
+              <p class="site-description motion-element" itemprop="description">生活要有仪式感</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-globe"></i>
+                推荐阅读
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://x-nicolo.github.io/" title="肖洒" target="_blank">肖洒</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000" title="廖雪峰python学习" target="_blank">廖雪峰python学习</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.w3school.com.cn/html/index.asp" title="W3school" target="_blank">W3school</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.nowcoder.com/" title="牛客网" target="_blank">牛客网</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.runoob.com/" title="菜鸟教程" target="_blank">菜鸟教程</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#categories-爬虫"><span class="nav-number">1.</span> <span class="nav-text">categories: 爬虫</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#抓包工具Fiddler"><span class="nav-number">1.1.</span> <span class="nav-text">抓包工具Fiddler</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Fiddler抓包解析"><span class="nav-number">1.1.1.</span> <span class="nav-text">Fiddler抓包解析</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#爬取教务处学生信息student-py"><span class="nav-number">1.2.</span> <span class="nav-text">爬取教务处学生信息student.py</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#登陆页面的url"><span class="nav-number">1.2.1.</span> <span class="nav-text">登陆页面的url</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#模拟登陆"><span class="nav-number">1.2.2.</span> <span class="nav-text">模拟登陆</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#self-session-get（）"><span class="nav-number">1.2.2.1.</span> <span class="nav-text">self.session.get（）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#r-text"><span class="nav-number">1.2.2.2.</span> <span class="nav-text">r.text()</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#登陆所需信息"><span class="nav-number">1.2.2.3.</span> <span class="nav-text">登陆所需信息</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#模拟登陆报头"><span class="nav-number">1.2.2.4.</span> <span class="nav-text">模拟登陆报头</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#保存为CSV文件"><span class="nav-number">1.2.3.</span> <span class="nav-text">保存为CSV文件</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">刘莹</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
