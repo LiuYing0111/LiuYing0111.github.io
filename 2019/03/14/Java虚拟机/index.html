@@ -88,7 +88,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/13740218-ef7bc206cef9f3bc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/13740218-7eec42519948687e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2019-03-14T10:02:32.596Z">
+<meta property="og:updated_time" content="2019-03-14T11:42:14.482Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="刘莹的技术博客">
 <meta name="twitter:description" content="title: Java虚拟机date: 2019-03-14 18:01:52tags: [java] categories: 面经为阿里菜鸟的实习生面试准备一些JAVA基础功课–JVM相关知识点~~~加油！！！！冲鸭！！！！">
@@ -409,8 +409,8 @@
 </ol>
 <p><strong>准备：</strong>  </p>
 <p>准备阶段是为类的静态变量分配内存并将其初始化为默认值，这些内存都将在方法区中进行分配。准备阶段不分配类中的实例变量的内存，实例变量将会在对象实例化时随着对象一起分配在Java堆中。</p>
-<pre><code>public static int value=123;//在准备阶段value初始值为0 。在初始化阶段才会变为123 。12
-</code></pre><p><strong>解析：</strong>  </p>
+<figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="keyword">value</span>=<span class="number">123</span>;<span class="comment">//在准备阶段value初始值为0 。在初始化阶段才会变为123 。12</span></span><br></pre></td></tr></table></figure>
+<p><strong>解析：</strong>  </p>
 <p>该阶段主要完成符号引用到直接引用的转换动作。解析动作并不一定在初始化动作完成之前，也有可能在初始化之后。  </p>
 <p><strong>初始化：</strong>  </p>
 <p>初始化时类加载的最后一步，前面的类加载过程，除了在加载阶段用户应用程序可以通过自定义类加载器参与之外，其余动作完全由虚拟机主导和控制。到了初始化阶段，才真正开始执行类中定义的Java程序代码。  </p>
