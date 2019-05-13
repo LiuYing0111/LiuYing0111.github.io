@@ -262,6 +262,201 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://liuying0111.github.io/2019/05/09/2019华为软件精英挑战赛/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="刘莹">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="刘莹的技术博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/05/09/2019华为软件精英挑战赛/" itemprop="url">2019华为软件精英挑战赛</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-09T21:45:45+08:00">
+                2019-05-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/竞赛/" itemprop="url" rel="index">
+                    <span itemprop="name">竞赛</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><h3 id="背景信息"><a href="#背景信息" class="headerlink" title="背景信息"></a>背景信息</h3><p>日常生活中，很多拥堵是由于车辆行驶路线规划失误，大批车辆集中选择主干道行驶导致通行效率下降。  </p>
+<p>如果车辆都由调度中心统一规划调度路线，拥堵问题将得到大大缓解甚至彻底解决。  </p>
+<p>实际上这一技术已经在工业领域如矿山车辆、无人货仓等得到广泛应用。  </p>
+<p>但道路上的私家车辆尚无法进行统一规划，未来，自动驾驶和物联网技术的结合，使得彻底解决这一难题出现了曙光。  </p>
+<p>请同学们提前出任“首席城市交通规划官”，为未来城市规划好每一辆车的行驶路线。  </p>
+<h3 id="假设条件"><a href="#假设条件" class="headerlink" title="假设条件"></a>假设条件</h3><ul>
+<li><p>路口完全立交：假定在每一个路口交汇的所有道路都可以完全互连，且车辆通过路口时不考虑在路口的通行时间。  </p>
+</li>
+<li><p>无限神奇车库：我们认为，系统中的每个地点都有一个无限容量的“神奇车库”。车辆在未到既定出发时间前，或者到达目的后，就停放在“神奇车库”中，完全不影响其他车辆通过。但车辆一旦出发，在行驶过程中则不允许进入车库空间。  </p>
+</li>
+<li><p>不允许超车变道  </p>
+</li>
+<li><p>排队先到先行  </p>
+</li>
+<li><p>车道固定进入  </p>
+</li>
+</ul>
+<h3 id="题目输入"><a href="#题目输入" class="headerlink" title="题目输入"></a>题目输入</h3><p>每一个测试用例都分为三部分：  </p>
+<p>road.txt/car.txt/cross.txt  </p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">道路：(道路<span class="built_in">id</span>，道路长度，最高限速，车道数目，起始点<span class="built_in">id</span>，终点<span class="built_in">id</span>，是否双向)  </span><br><span class="line">车辆：(车辆<span class="built_in">id</span>，始发地、目的地、最高速度、计划出发时间)  </span><br><span class="line">路口：(路口<span class="built_in">id</span>,道路<span class="built_in">id</span>,道路<span class="built_in">id</span>,道路<span class="built_in">id</span>,道路<span class="built_in">id</span>)</span><br></pre></td></tr></table></figure>
+<p>图形化实例：<br><img src="https://upload-images.jianshu.io/upload_images/13740218-5f061f3caa2b6cc2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">  </p>
+<h3 id="答案提交"><a href="#答案提交" class="headerlink" title="答案提交"></a>答案提交</h3><p>要求为每辆车规划最短路线，输出answer.txt  </p>
+<figure class="highlight scheme"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(<span class="name">车辆id，实际出发时间，行驶路线序列</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="评分标准"><a href="#评分标准" class="headerlink" title="评分标准"></a>评分标准</h3><p>系统调度时间短者胜出。系统调度时间指，从系统调度开始时间（非第一辆车实际开始运行的时间），至所有车辆全部到达目的地的时间，两者之差作为系统调度时间。  </p>
+<p>若系统调度时间相同，则所有车辆的行驶用时总时间最少者胜出。  </p>
+<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>建立一个矩阵，表示每条路的拥堵程度：  </p>
+<p>[道路长度]+[每条路当前时刻正在行驶的车辆数/车道数]，按照一定的权重比求和    </p>
+<p>矩阵的大小都是cross*cross  </p>
+<p>对新矩阵中的每个点做floyed，求出其最短路线。  </p>
+<p>其中，在计算每条路当前时刻正在行驶的车辆数时：  </p>
+<p>对已经规划好路线的车辆，每条路的长度/车辆速度（不能超过道路最大速度）=每条路上花费的时间  </p>
+<p>知道了出发时间，每条路上的时间，就可以计算出当前时刻所在的道路，在矩阵中该路线的位置加1  </p>
+<p>每秒发n（初赛62，复赛80多）辆车，这个n的值是调参调出来的不出现死锁的最大发车数量  </p>
+<h3 id="Floyed最短路径算法"><a href="#Floyed最短路径算法" class="headerlink" title="Floyed最短路径算法"></a>Floyed最短路径算法</h3><p>Floyd算法是解决任意两点间的最短路径的一种算法，是一个经典的动态规划算法。  </p>
+<p><img src="https://upload-images.jianshu.io/upload_images/13740218-0d5f47ec74034490.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">  </p>
+<p>上图表示是几个结点，以及结点之间的距离，上图的信息可以用一个矩阵来表示：<br><img src="https://upload-images.jianshu.io/upload_images/13740218-28e23020f356bc17.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">  </p>
+<p>比如求取i到j之间的最短路线，找到i和j之间的结点k，判断  </p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="built_in">i</span>=<span class="number">1</span>; <span class="built_in">i</span>&lt;=nv; <span class="built_in">i</span>++)</span><br><span class="line">      <span class="keyword">for</span> (<span class="built_in">j</span>=<span class="number">1</span>; <span class="built_in">j</span>&lt;=nv; <span class="built_in">j</span>++)</span><br><span class="line">          <span class="keyword">for</span> (k=<span class="number">1</span>; k&lt;=nv; k++)</span><br><span class="line">              map[i][j] = min(map[i][j], map[i][k]+map[k][j]);</span><br></pre></td></tr></table></figure>
+<p>求i到j之间的距离，先找到第一个结点k，判断加入k之后距离会不会变小，如果变小，再求k到j之间的最小距离，在找到第二个结点k…依次循环  </p>
+<h3 id="其他方法"><a href="#其他方法" class="headerlink" title="其他方法"></a>其他方法</h3><ul>
+<li><p>将速度大的车选出来，放在一个组，让他们先发车，因为速度大的车先发，就会先到终点，会减少后面道路的拥堵程度，但是效果并不好。<br>分析原因：可能是让速度大的车先发了，后面的车都是速度慢的，整体来看，道路可能更容易堵。  </p>
+</li>
+<li><p>让速度大的那组，一次多发一些车</p>
+</li>
+<li><p>行车方向相近的，分在不同的组，避免造成拥堵   </p>
+</li>
+</ul>
+<h3 id="复赛"><a href="#复赛" class="headerlink" title="复赛"></a>复赛</h3><p>复赛加上了优先车辆跟预置车辆的约束条件，优先车辆可以优先使用道路的路权并且先发车，预置车辆是指道路已经确定不能修改的车。  </p>
+<p>处理方式是：最终的评分标准中，总系统调度时间+优先车辆的时间  </p>
+<p>优先车辆：先发车，还是按之前的方法求出每辆车的最短路线  </p>
+<p>预置车辆（3000辆左右）：跟普通车辆一起发，在发车前进行一个if判断，如果是预置车辆，则按照其路线发，如果是普通车辆，就跟之前一样的处理方式。  </p>
+<h2 id="遇到的问题"><a href="#遇到的问题" class="headerlink" title="遇到的问题"></a>遇到的问题</h2><p>题目要求程序运行时间900s=15min，但是我们的python运行时间是半个多小时，最终翻译成c++程序就只要几分钟，时间大都浪费在floyed运算上面。  </p>
+<p>遇到瓶颈，无法继续优化路线，解决方法：多刷群消息，通过别人讨论的问题，寻找有用信息，线下交流会，多跟老师交流，多尝试。</p>
+<h2 id="附上求路线的代码"><a href="#附上求路线的代码" class="headerlink" title="附上求路线的代码"></a>附上求路线的代码</h2><figure class="highlight prolog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br></pre></td><td class="code"><pre><span class="line">def process_10(car, road, cross):</span><br><span class="line">    #method <span class="number">10</span></span><br><span class="line">    </span><br><span class="line">    print(<span class="string">'-------------------1'</span>)</span><br><span class="line">    </span><br><span class="line">    #create graph matrix</span><br><span class="line">    numOfCross = len(cross.idList)</span><br><span class="line">    #numOfRoad = len(road.idList)</span><br><span class="line">    adjMatrix = np.zeros([numOfCross, numOfCross]) + sys.maxunicode</span><br><span class="line">    roadMatrix = np.zeros([numOfCross, numOfCross],dtype = int)</span><br><span class="line">    roadMatrixIndex = np.zeros([numOfCross, numOfCross],dtype = int)</span><br><span class="line">    roadMatrixSpeed = np.zeros([numOfCross, numOfCross],dtype = int)</span><br><span class="line">    roadMatrixChannel = np.zeros([numOfCross, numOfCross],dtype = int)</span><br><span class="line">    for i in range(len(road.idList)):</span><br><span class="line">        adjMatrix[road.fromList[i]<span class="number">-1</span>, road.toList[i]<span class="number">-1</span>] = road.lengthList[i]</span><br><span class="line">        roadMatrix[road.fromList[i]<span class="number">-1</span>, road.toList[i]<span class="number">-1</span>] = road.idList[i]</span><br><span class="line">        roadMatrixIndex[road.fromList[i]<span class="number">-1</span>, road.toList[i]<span class="number">-1</span>] = i</span><br><span class="line">        roadMatrixSpeed[road.fromList[i]<span class="number">-1</span>, road.toList[i]<span class="number">-1</span>] = road.speedList[i]</span><br><span class="line">        roadMatrixChannel[road.fromList[i]<span class="number">-1</span>, road.toList[i]<span class="number">-1</span>] = road.channelList[i]</span><br><span class="line">        if(road.isDuplexList[i] == <span class="number">1</span>):</span><br><span class="line">            adjMatrix[road.toList[i]<span class="number">-1</span>, road.fromList[i]<span class="number">-1</span>] = road.lengthList[i]</span><br><span class="line">            roadMatrix[road.toList[i]<span class="number">-1</span>, road.fromList[i]<span class="number">-1</span>] = road.idList[i]</span><br><span class="line">            roadMatrixIndex[road.toList[i]<span class="number">-1</span>, road.fromList[i]<span class="number">-1</span>] = i</span><br><span class="line">            roadMatrixSpeed[road.toList[i]<span class="number">-1</span>, road.fromList[i]<span class="number">-1</span>] = road.speedList[i]</span><br><span class="line">            roadMatrixChannel[road.toList[i]<span class="number">-1</span>, road.fromList[i]<span class="number">-1</span>] = road.channelList[i]</span><br><span class="line">    for i in range(numOfCross):</span><br><span class="line">        adjMatrix[i,i] = <span class="number">0</span></span><br><span class="line">    print(<span class="string">'-------------------2'</span>)</span><br><span class="line">        </span><br><span class="line">    #compute the min distance by floyd</span><br><span class="line">    distanceMin, routeMin = floyd(adjMatrix, numOfCross)</span><br><span class="line">    </span><br><span class="line">    print(<span class="string">'-------------------3'</span>)</span><br><span class="line">    #sum <span class="symbol">Of</span> the routes</span><br><span class="line">    sumRoutesMat = np.zeros([numOfCross, numOfCross],dtype = int)</span><br><span class="line">    </span><br><span class="line">    #compute the time of the routes</span><br><span class="line">    #sumCrossMat =  np.zeros([numOfCross,numOfCross])</span><br><span class="line">    #sumCrossList = [[car.fromList[i],car.toList[i]] for i in range(len(car.idList))]</span><br><span class="line">    #for i in range(len(sumCrossList)):</span><br><span class="line">        #sumCrossMat[sumCrossList[i][<span class="number">0</span>] - <span class="number">1</span>,sumCrossList[i][<span class="number">1</span>] - <span class="number">1</span>] += <span class="number">1</span></span><br><span class="line">    #[([np.empty([<span class="number">0</span>],dtype=int)] * numOfCross) for i in range(numOfCross)]</span><br><span class="line">    #routeCrossMatCode = [[np.zeros([numOfCross,numOfCross],dtype=int) for i0 in range(numOfCross)] for i1 in range(numOfCross)]</span><br><span class="line">    #routeCrossList = [[np.empty([<span class="number">0</span>],dtype=int) for i0 in range(numOfCross)] for i1 in range(numOfCross)]</span><br><span class="line">    #routeCrossListCode = [[np.zeros([<span class="number">1</span>,numOfRoad],dtype=int) for i0 in range(numOfCross)] for i1 in range(numOfCross)]</span><br><span class="line">    </span><br><span class="line">    #for i in range(numOfCross):</span><br><span class="line">        #for j in range(numOfCross):</span><br><span class="line">            #if sumCrossMat[i][j] &gt; <span class="number">0</span>:</span><br><span class="line">                #routeCrossList[i][j] = [[routeMin[i][j][i0]<span class="number">-1</span>,routeMin[i][j][i0+<span class="number">1</span>]<span class="number">-1</span>] for i0 in range(len(routeMin[i][j])<span class="number">-1</span>)]</span><br><span class="line">                #routeCrossListCode[i][j] = [roadMatrixIndex[i0,j0] for i0,j0 in routeCrossList[i][j]]</span><br><span class="line">                #for i0,j0 in routeCrossList[i][j]:</span><br><span class="line">                    #routeCrossMatCode[i][j][i0,j0] = <span class="number">1</span></span><br><span class="line">    </span><br><span class="line">    #answer</span><br><span class="line">    numOfCar = len(car.idList)</span><br><span class="line">    planTimeList = np.zeros(numOfCar, dtype = int)</span><br><span class="line">    print(<span class="string">'-------------------4'</span>)</span><br><span class="line">    costTimeList = np.zeros(<span class="number">1</span>, dtype = int)</span><br><span class="line">    endTimeList = np.zeros(numOfCar, dtype = int)</span><br><span class="line">    answer = [[<span class="string">''</span>] for i in range(numOfCar)]</span><br><span class="line">    timeOfNow = <span class="number">0</span></span><br><span class="line">    carInRoutesIndex = np.arange(numOfCar)</span><br><span class="line">    print(<span class="string">'-------------------5'</span>)</span><br><span class="line">    carRouteCrossMatCode = [[np.zeros([numOfCross, numOfCross],dtype=int)] for i0 in range(len(car.idList))]</span><br><span class="line">    print(<span class="string">'-------------------6'</span>)</span><br><span class="line">    for i in range(numOfCar):</span><br><span class="line">        if i<span class="comment">%600 ==0:</span></span><br><span class="line">            print(i)</span><br><span class="line">            #distanceMin, routeMin = floyd(adjMatrix + sumRoutesMat * <span class="number">300</span>, numOfCross)</span><br><span class="line">        i0 = car.fromList[i] - <span class="number">1</span></span><br><span class="line">        j0 = car.toList[i] - <span class="number">1</span></span><br><span class="line">        routeCrossListCode_0 = [roadMatrixIndex[routeMin[i0][j0][i]<span class="number">-1</span>,routeMin[i0][j0][i+<span class="number">1</span>]<span class="number">-1</span>] for i in range(len(routeMin[i0][j0])<span class="number">-1</span>)]</span><br><span class="line">        roadIdList = [road.idList[i] for i in routeCrossListCode_0]</span><br><span class="line">        for j1 in range(len(routeMin[i0][j0])<span class="number">-1</span>):</span><br><span class="line">            carRouteCrossMatCode[i][<span class="number">0</span>][routeMin[i0][j0][j1]<span class="number">-1</span>,routeMin[i0][j0][j1+<span class="number">1</span>]<span class="number">-1</span>] += <span class="number">1</span></span><br><span class="line">        if i&gt;<span class="number">1000</span>:</span><br><span class="line">            timeOfNow = math.floor((i<span class="number">-1000</span>) / <span class="number">28</span>)</span><br><span class="line">        else:</span><br><span class="line">            timeOfNow = car.planTimeList[i]</span><br><span class="line">        planTimeList[i] = max(timeOfNow,car.planTimeList[i])</span><br><span class="line">        costTime_tmp = [road.lengthList[i] for i in routeCrossListCode_0]</span><br><span class="line">        costTime_tmp2 = [road.speedList[i] for i in routeCrossListCode_0]</span><br><span class="line">        costTime_tmp3 = np.vstack((costTime_tmp2,car.speedList[i] * np.ones([<span class="number">1</span>,len(routeCrossListCode_0)]))).min(<span class="number">0</span>)</span><br><span class="line">        costTimeList = sum(costTime_tmp / costTime_tmp3)</span><br><span class="line">        endTimeList[i] =  planTimeList[i] + costTimeList</span><br><span class="line">        answer[i] = str(car.idList[i]) + <span class="string">', '</span> + str(planTimeList[i]) + <span class="string">', '</span> + str(roadIdList)[<span class="number">1</span> : <span class="number">-1</span>]</span><br><span class="line">        carInRoutes = carInRoutesIndex[endTimeList &gt;= timeOfNow]</span><br><span class="line">        #print(<span class="string">'i:'</span>+str(i)+<span class="string">'--------'</span>+<span class="string">'timeOfNow:'</span>+str(timeOfNow))</span><br><span class="line">        #print(sum(endTimeList &gt;= timeOfNow))</span><br><span class="line">        sumRoutesMat = sumRoutesMat * <span class="number">0</span></span><br><span class="line">        for j2 in carInRoutes:</span><br><span class="line">            sumRoutesMat += carRouteCrossMatCode[j2][<span class="number">0</span>]</span><br><span class="line">        sumRoutesMat[roadMatrix &gt; <span class="number">0</span>] = sumRoutesMat[roadMatrix &gt; <span class="number">0</span>] / roadMatrixChannel[roadMatrix &gt; <span class="number">0</span>]</span><br><span class="line"></span><br><span class="line">    return answer</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://liuying0111.github.io/2019/03/15/Java面试基础问题/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2301,153 +2496,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://liuying0111.github.io/2018/08/27/前端学习-HTML基础教程/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="刘莹">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="刘莹的技术博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/08/27/前端学习-HTML基础教程/" itemprop="url">前端学习-HTML基础教程</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-27T20:01:03+08:00">
-                2018-08-27
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端/" itemprop="url" rel="index">
-                    <span itemprop="name">前端</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>All from <a href="http://www.w3school.com.cn/html/index.asp" target="_blank" rel="noopener">w3school</a></p>
-<h3 id="HTML简介"><a href="#HTML简介" class="headerlink" title="HTML简介"></a>HTML简介</h3><p>HTML是用来描述网页的一种语言，指的是超文本标记语言（Hyper Text Markup Language），不是一种编程语言，而是一种标记语言。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/08/27/前端学习-HTML基础教程/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2498,7 +2546,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-count">17</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2509,7 +2557,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
